@@ -8,7 +8,9 @@
 
 ## 1. The rule that makes the series possible
 
-**A site repository does not edit `assets/` or `tools/`.** The engine and the checks are the same files on every site. Found a defect or a missing feature in them? Write one line in `lessons/notes-N.md`, keep working around it, and the fix is made **once** in the seed (`ai-factory-builder/seed/swa/`) and handed to every site.
+**A site repository does not drift from `assets/` and `tools/`.** The engine and the checks are the same files on every site, and that sameness is the point. A **defect** found while writing content is one line in `lessons/notes-N.md`, a workaround in the content, and a fix made once in the seed.
+
+**A missing feature is different from a defect, and it is born where it is needed.** The engine grows in the session that needed it: the diagram check was written whole in one commit (`b499287`) and reached the sites afterwards as `chore(engine): sync from seed`. A pilot who needs a capability the engine lacks writes it here, in a dedicated `chore(engine)` commit with no content mixed in, proves it on this site with a predicate, and the Architect decides when it is seeded to `seed/swa` and the sibling sites. Innovation is the norm in this series, not an exception to be asked for; what is regulated is **where the new thing lives** and that it travels to every site rather than staying as one site's private fork. Stated by the Architect on 24.10.2026, after this rule was read as a ban on improving the engine at all.
 
 **Engine updates are isolated and approved.** Bringing in updated engine files from the seed (`seed/swa/sync.sh`) is committed in a **dedicated commit** (`chore(engine): sync from seed ...`) with no product files or content mixed in, and **only with the Conductor's explicit approval**.
 
