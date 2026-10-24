@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Язык и логика: утверждение, множество, доказательство · math-core · ai|</title>
 <!-- meta: built by tools/build-meta.py - do not edit by hand -->
-<meta name="description" content="Шесть вещей, на которых стоит весь остальной курс: утверждение, множество, отображение, квантор, индукция и само слово «доказано».">
+<meta name="description" content="Шесть вещей, на которых стоит весь остальной курс, и седьмая, без которой их не прочитать: утверждение, множество, отображение, квантор, индукция...">
 <link rel="canonical" href="https://y-kolyada.github.io/math/ru/01.html">
 <link rel="alternate" hreflang="ru" href="https://y-kolyada.github.io/math/ru/01.html">
 <link rel="alternate" hreflang="en" href="https://y-kolyada.github.io/math/en/01.html">
@@ -15,12 +15,12 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="math-core">
 <meta property="og:title" content="Язык и логика: утверждение, множество, доказательство">
-<meta property="og:description" content="Шесть вещей, на которых стоит весь остальной курс: утверждение, множество, отображение, квантор, индукция и само слово «доказано».">
+<meta property="og:description" content="Шесть вещей, на которых стоит весь остальной курс, и седьмая, без которой их не прочитать: утверждение, множество, отображение, квантор, индукция...">
 <meta property="og:url" content="https://y-kolyada.github.io/math/ru/01.html">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Язык и логика: утверждение, множество, доказательство","description":"Шесть вещей, на которых стоит весь остальной курс: утверждение, множество, отображение, квантор, индукция и само слово «доказано».","url":"https://y-kolyada.github.io/math/ru/01.html","inLanguage":"ru","isPartOf":{"@type":"WebSite","name":"math-core","url":"https://y-kolyada.github.io/math/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Язык и логика: утверждение, множество, доказательство","description":"Шесть вещей, на которых стоит весь остальной курс, и седьмая, без которой их не прочитать: утверждение, множество, отображение, квантор, индукция...","url":"https://y-kolyada.github.io/math/ru/01.html","inLanguage":"ru","isPartOf":{"@type":"WebSite","name":"math-core","url":"https://y-kolyada.github.io/math/"}}</script>
 <!-- /meta -->
 <link rel="stylesheet" href="../assets/style.css?v=1">
 <script>
@@ -94,8 +94,8 @@
 
   <main id="main">
     <h1>Язык и логика: утверждение, множество, доказательство</h1>
-    <p class="page-size" data-words="1249">Слов: 1249</p>
-    <p class="lead">Шесть вещей, на которых стоит весь остальной курс: утверждение, множество, отображение, квантор, индукция и само слово «доказано».</p>
+    <p class="page-size" data-words="1539">Слов: 1539</p>
+    <p class="lead">Шесть вещей, на которых стоит весь остальной курс, и седьмая, без которой их не прочитать: утверждение, множество, отображение, квантор, индукция, доказательство и само письмо.</p>
 
     <div class="box key" id="key-idea">
       <h2>Главная мысль страницы <a class="anchor-link" href="#key-idea" aria-label="ссылка на этот блок">#</a></h2>
@@ -184,6 +184,30 @@ print(left(10), right(10))
 
     <p>И отдельно стоит <span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">контрпример</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Контрпример</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Единственный пример, опровергающий утверждение окончательно.</span><span class="term-links"><a href="glossary.html#term-counterexample">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span> - единственный способ опровергнуть утверждение раз и навсегда. Многочлен <span class="math" data-tex="n^2 + n + 41"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup><mo>&#x0002B;</mo><mi>n</mi><mo>&#x0002B;</mo><mn>41</mn></mrow><annotation encoding="application/x-tex">n^2 + n + 41</annotation></semantics></math></span> даёт простое число для всех n от нуля до тридцати девяти. Сорок проверок подряд выглядят убедительно ровно до сорокового шага, где получается <span class="math" data-tex="41^2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><msup><mn>41</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">41^2</annotation></semantics></math></span>. Проверка случаев не доказывает ничего, зато один случай опровергает всё.</p>
 
+    <h2 id="writing">7 · Как это записывают и как это читают <a class="anchor-link" href="#writing">#</a></h2>
+
+    <p>Всё, что сказано на этой странице словами, математика записывает знаками, и это не стенография ради экономии бумаги. Фраза «для любого положительного эпсилон найдётся номер, начиная с которого расстояние меньше эпсилон» занимает четыре строки прозы и допускает второе прочтение почти в каждом слове; та же мысль знаками занимает строку и допускает ровно одно:</p>
+
+    <div class="math-block" data-tex="\forall \varepsilon &gt; 0\ \exists N\ \forall n &gt; N: \ |a_n - a| &lt; \varepsilon"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo>&#x02200;</mo><mi>&#x003B5;</mi><mo>&#x0003E;</mo><mn>0</mn><mtext>&#x000A0;</mtext><mo>&#x02203;</mo><mi>N</mi><mtext>&#x000A0;</mtext><mo>&#x02200;</mo><mi>n</mi><mo>&#x0003E;</mo><mi>N</mi><mi>:</mi><mtext>&#x000A0;</mtext><mo stretchy="false">&#x0007C;</mo><msub><mi>a</mi><mi>n</mi></msub><mo>&#x02212;</mo><mi>a</mi><mo stretchy="false">&#x0007C;</mo><mo>&#x0003C;</mo><mi>&#x003B5;</mi></mrow><annotation encoding="application/x-tex">\forall \varepsilon &gt; 0\ \exists N\ \forall n &gt; N: \ |a_n - a| &lt; \varepsilon</annotation></semantics></math></div>
+
+    <p>У письма есть вторая половина, о которой учебники молчат, потому что в аудитории она передаётся голосом: знаки нужно уметь <strong>произносить</strong>. Человек, видевший <span class="math" data-tex="\partial"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mo>&#x02202;</mo></mrow><annotation encoding="application/x-tex">\partial</annotation></semantics></math></span> сто раз и ни разу не слышавший, что это «дэ круглое», не может ни задать вопрос, ни проверить себя вслух, ни обсудить задачу с другим: знак остаётся картинкой. Самостоятельное чтение теряет именно эту половину, и потеря не видна изнутри.</p>
+
+    <p>Десяток знаков, без которых не читается ни одна страница дальше:</p>
+
+    <ul>
+      <li><span class="math" data-tex="\forall"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mo>&#x02200;</mo></mrow><annotation encoding="application/x-tex">\forall</annotation></semantics></math></span> и <span class="math" data-tex="\exists"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mo>&#x02203;</mo></mrow><annotation encoding="application/x-tex">\exists</annotation></semantics></math></span> - «для любого» и «существует»; порядок этих двух слов менять нельзя.</li>
+      <li><span class="math" data-tex="\in"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mo>&#x02208;</mo></mrow><annotation encoding="application/x-tex">\in</annotation></semantics></math></span> и <span class="math" data-tex="\subseteq"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mo>&#x02286;</mo></mrow><annotation encoding="application/x-tex">\subseteq</annotation></semantics></math></span> - «принадлежит» и «подмножество»: первое про элемент, второе про множество целиком.</li>
+      <li><span class="math" data-tex="\Rightarrow"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mo>&#x021D2;</mo></mrow><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math></span> и <span class="math" data-tex="\Leftrightarrow"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mo>&#x021D4;</mo></mrow><annotation encoding="application/x-tex">\Leftrightarrow</annotation></semantics></math></span> - «влечёт» и «тогда и только тогда».</li>
+      <li><span class="math" data-tex="\sum_{k=1}^{n} a_k"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><msubsup><mo>&#x02211;</mo><mrow><mi>k</mi><mo>&#x0003D;</mo><mn>1</mn></mrow><mrow><mi>n</mi></mrow></msubsup><msub><mi>a</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\sum_{k=1}^{n} a_k</annotation></semantics></math></span> - «сумма по ка от одного до эн», и <span class="math" data-tex="\prod_{k=1}^{n} a_k"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><msubsup><mo>&#x0220F;</mo><mrow><mi>k</mi><mo>&#x0003D;</mo><mn>1</mn></mrow><mrow><mi>n</mi></mrow></msubsup><msub><mi>a</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\prod_{k=1}^{n} a_k</annotation></semantics></math></span> - «произведение».</li>
+      <li><span class="math" data-tex="\lim_{n \to \infty} a_n"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><msub><mo>lim</mo><mrow><mi>n</mi><mo>&#x02192;</mo><mo>&#x0221E;</mo></mrow></msub><msub><mi>a</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\lim_{n \to \infty} a_n</annotation></semantics></math></span> - «предел при эн, стремящемся к бесконечности».</li>
+      <li><span class="math" data-tex="\int_a^b f(x)\,dx"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><msubsup><mo>&#x0222B;</mo><mi>a</mi><mi>b</mi></msubsup><mi>f</mi><mo stretchy="false">&#x00028;</mo><mi>x</mi><mo stretchy="false">&#x00029;</mo><mspace width="0.167em" /><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\int_a^b f(x)\,dx</annotation></semantics></math></span> - «интеграл от а до бэ эф от икс дэ икс».</li>
+      <li><span class="math" data-tex="\varepsilon"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mi>&#x003B5;</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span> и <span class="math" data-tex="\delta"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mi>&#x003B4;</mi></mrow><annotation encoding="application/x-tex">\delta</annotation></semantics></math></span> - «эпсилон» и «дельта», пара, на которой держатся все определения анализа.</li>
+    </ul>
+
+    <p>Полный список - восемьдесят пять знаков девятью группами, у каждого название, произношение и тема, где он работает, - лежит в <a href="glossary.html#symbols">разделе «Язык письма»</a> словаря. Туда стоит заглядывать не до чтения курса, а во время: знак запоминается вместе с задачей, в которой понадобился.</p>
+
+    <div class="prints"><strong>Что спрашивают:</strong> «Чем <span class="math" data-tex="\subset"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mo>&#x02282;</mo></mrow><annotation encoding="application/x-tex">\subset</annotation></semantics></math></span> отличается от <span class="math" data-tex="\in"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mo>&#x02208;</mo></mrow><annotation encoding="application/x-tex">\in</annotation></semantics></math></span>?» Первое связывает два множества, второе - элемент и множество. Запись «единица принадлежит множеству натуральных чисел» верна, «единица есть подмножество натуральных» - ошибка уровня, которую на экзамене замечают мгновенно.</div>
+
     <div class="box key" id="artifacts">
       <h2>Артефакты: что у вас есть после этой страницы <a class="anchor-link" href="#artifacts">#</a></h2>
       <ul>
@@ -191,6 +215,7 @@ print(left(10), right(10))
         <li>Правила отрицания составных утверждений и кванторов, которые применяются механически.</li>
         <li>Множество, отображение и три его свойства, через которые дальше определяется всё остальное.</li>
         <li>Понимание, чем проверка на примерах отличается от доказательства, и что один контрпример сильнее сорока подтверждений.</li>
+        <li>Десяток знаков математического письма вместе с их произношением и дорога к полному списку из восьмидесяти пяти.</li>
       </ul>
     </div>
   
