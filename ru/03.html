@@ -94,7 +94,7 @@
 
   <main id="main">
     <h1>Дискретное: счёт, рекуррентность, графы</h1>
-    <p class="page-size" data-words="1202">Слов: 1202</p>
+    <p class="page-size" data-words="1247">Слов: 1247</p>
     <p class="lead">Область конечного: как считать не перебирая, как решать рекуррентность и почему <span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">перестановки оказались первой группой</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Группа</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Множество с ассоциативной операцией, нейтральным элементом и обратным к каждому элементу.</span><span class="term-links"><a href="glossary.html#term-group">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span> в истории.</p>
 
     <div class="box key" id="key-idea">
@@ -207,6 +207,50 @@ print(sorted(deg.items()), len(odd))
         <text x="284" y="152" font-size="13" fill="currentColor" stroke="none" text-anchor="end">3</text>
       </svg>
       <p class="dim">Схема 3. Четыре вершины нечётной степени: обхода по всем рёбрам ровно по разу не существует, и это видно счётом, а не перебором.</p>
+    </div>
+
+    <div class="box">
+      <svg role="img" aria-label="Слева ненаправленный граф: связи между вершинами двусторонние. Справа направленный: у каждой стрелки своё направление, и обратного пути может не быть." viewBox="0 0 320 170" width="100%" style="max-width:320px;height:auto;display:block;margin:0 auto" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="currentColor" stroke="none"/></marker></defs>
+        <path d="M40 50 L110 50"/>
+        <path d="M40 50 L75 110"/>
+        <path d="M110 50 L75 110"/>
+        <circle cx="40" cy="50" r="6" fill="currentColor" stroke="none"/>
+        <circle cx="110" cy="50" r="6" fill="currentColor" stroke="none"/>
+        <circle cx="75" cy="110" r="6" fill="currentColor" stroke="none"/>
+        <text x="75" y="150" font-size="13" fill="currentColor" stroke="none" text-anchor="middle">ненаправленный</text>
+        <path d="M205 50 L272 50" marker-end="url(#ar)"/>
+        <path d="M272 56 L243 104" marker-end="url(#ar)"/>
+        <path d="M232 110 L203 58" marker-end="url(#ar)"/>
+        <circle cx="200" cy="50" r="6" fill="currentColor" stroke="none"/>
+        <circle cx="278" cy="50" r="6" fill="currentColor" stroke="none"/>
+        <circle cx="239" cy="110" r="6" fill="currentColor" stroke="none"/>
+        <text x="239" y="150" font-size="13" fill="currentColor" stroke="none" text-anchor="middle">направленный</text>
+      </svg>
+      <p class="dim">Схема 4. Ненаправленное ребро говорит «связаны», направленное - «отсюда туда»: знакомство симметрично, а зависимость задачи от данных нет.</p>
+    </div>
+
+    <div class="box">
+      <svg role="img" aria-label="Слева граф из одной компоненты: от любой вершины есть путь к любой. Справа тот же набор вершин, распавшийся на три компоненты без путей между ними." viewBox="0 0 320 170" width="100%" style="max-width:320px;height:auto;display:block;margin:0 auto" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M30 46 L90 46"/>
+        <path d="M90 46 L60 104"/>
+        <path d="M30 46 L60 104"/>
+        <path d="M90 46 L130 104"/>
+        <circle cx="30" cy="46" r="6" fill="currentColor" stroke="none"/>
+        <circle cx="90" cy="46" r="6" fill="currentColor" stroke="none"/>
+        <circle cx="60" cy="104" r="6" fill="currentColor" stroke="none"/>
+        <circle cx="130" cy="104" r="6" fill="currentColor" stroke="none"/>
+        <text x="78" y="148" font-size="13" fill="currentColor" stroke="none" text-anchor="middle">одна компонента</text>
+        <path d="M190 46 L230 46"/>
+        <path d="M272 90 L300 90"/>
+        <circle cx="190" cy="46" r="6" fill="currentColor" stroke="none"/>
+        <circle cx="230" cy="46" r="6" fill="currentColor" stroke="none"/>
+        <circle cx="215" cy="104" r="6" fill="currentColor" stroke="none"/>
+        <circle cx="272" cy="90" r="6" fill="currentColor" stroke="none"/>
+        <circle cx="300" cy="90" r="6" fill="currentColor" stroke="none"/>
+        <text x="246" y="148" font-size="13" fill="currentColor" stroke="none" text-anchor="middle">три компоненты</text>
+      </svg>
+      <p class="dim">Схема 5. Связность отвечает на вопрос «дойду ли»: одна компонента означает путь между любыми двумя вершинами, несколько - что части не сообщаются вовсе.</p>
     </div>
 
     <h2 id="pigeonhole">6 · Принцип Дирихле <a class="anchor-link" href="#pigeonhole">#</a></h2>
