@@ -356,7 +356,14 @@ for (const file of files) {
   const overflow = await phone.evaluate(() => {
     const viewport = document.documentElement.clientWidth;
     const out = [];
+    // Выключная формула шире экрана прокручивается внутри своей обёртки:
+    // MathML не переносит формулу по строкам, а резать её на части вправе
+    // только автор. Послабление намеренно узкое - только внутри .math-block,
+    // который печатает генератор формул, - поэтому сайт без формул не теряет
+    // ни одной проверки. Измерено: формула ряда Тейлора на 390px даёт
+    // scrollWidth 620 при видимых 358 и шесть ложных срабатываний без этого.
     for (const el of document.querySelectorAll('body *')) {
+      if (el.closest('.math-block')) continue;
       if (el.getBoundingClientRect().right > viewport + 1) {
         out.push(el.tagName + ': ' + el.textContent.trim().slice(0, 30));
       }
@@ -371,6 +378,7 @@ for (const file of files) {
     const out = { font: document.documentElement.getAttribute('data-font'), over: [], early: true };
     const viewport = document.documentElement.clientWidth;
     for (const el of document.querySelectorAll('body *')) {
+      if (el.closest('.math-block')) continue;
       if (el.getBoundingClientRect().right > viewport + 1) {
         out.over.push(el.tagName + ': ' + el.textContent.trim().slice(0, 30));
       }

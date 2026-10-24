@@ -1071,3 +1071,17 @@ nav.contents > .page-toc {
 .skip:focus {
   left: 0;
 }
+
+/* Формулы. MathML печётся в разметку генератором tools/build-math.py и живёт
+   обычным текстом: выделяется, произносится синтезатором, масштабируется
+   кнопками размера шрифта и наследует цвет темы. Выключная формула не
+   переносится по строкам ни в одном движке, поэтому её обёртка прокручивается
+   по горизонтали; проверка края знает про этот класс и не считает его браком. */
+math { font-size: inherit; color: inherit; }
+.math-block {
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 1.1em 0;
+  padding-bottom: 2px;
+}
+.math-block math { display: block; margin: 0 auto; min-width: max-content; }

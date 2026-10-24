@@ -36,9 +36,15 @@ ANCHOR_LINK = re.compile(r'<a class="anchor-link".*?</a>', re.S | re.I)
 # шумом - «Следующая тема» нашлась бы на каждой странице.
 SERVICE = re.compile(r'<nav class="pager".*?</nav>|<p class="page-size".*?</p>', re.S | re.I)
 GAP = re.compile(r'\s+([?!,.:;)])')
+# Формулы в индекс не кладутся вовсе. Снятие тегов вслепую положило бы туда
+# и глифы MathML, и сырой TeX из <annotation>, а сниппет под найденной
+# строкой состоял бы из обломков разметки. Читатель ищет словами, и слова
+# «интеграл», «сумма», «предел» стоят в прозе вокруг формулы.
+MATH = re.compile(r'<math\b.*?</math>', re.S | re.I)
 
 
 def text_of(chunk):
+    chunk = MATH.sub(' ', chunk)
     plain = ' '.join(html.unescape(TAG.sub(' ', SERVICE.sub(' ', ANCHOR_LINK.sub(' ', chunk)))).split())
     return GAP.sub(r'\1', plain)
 

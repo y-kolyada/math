@@ -77,6 +77,12 @@ SIZE_BLOCK = re.compile(r'\n?[ \t]*<p class="page-size".*?</p>', re.S)
 PAGER_BLOCK = re.compile(r'\n?[ \t]*<nav class="pager".*?</nav>', re.S)
 FOOTER_BLOCK = re.compile(r'\s*<footer\b[^>]*>.*?</footer>', re.S)
 ANCHOR = re.compile(r'<a class="anchor-link".*?</a>', re.S)
+# Формула не читается словами. В MathML каждый знак - отдельный элемент, и
+# подсчёт по токенам насчитал бы восемь «слов» на сумму Гаусса и двадцать
+# девять на строку с рядом и пределом: страница с тридцатью формулами и
+# четырьмя абзацами взяла бы пол в тысячу слов, ничего не сказав читателю.
+# Поэтому <math> вырезается перед счётом, а data-words остаётся мерой прозы.
+MATH = re.compile(r'<math\b.*?</math>', re.S | re.I)
 TAG = re.compile(r'<[^>]+>')
 WORD = re.compile(r'[^\W_]', re.UNICODE)
 
@@ -99,6 +105,7 @@ def count_words(text):
     inner = PAGER_BLOCK.sub('', inner)
     inner = FOOTER_BLOCK.sub('', inner)
     inner = ANCHOR.sub(' ', inner)
+    inner = MATH.sub(' ', inner)
     return sum(1 for w in re.split(r'\s+', plain(inner)) if WORD.search(w))
 
 
