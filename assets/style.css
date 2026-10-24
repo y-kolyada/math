@@ -684,6 +684,29 @@ body { padding-bottom: 72px; }
   text-decoration: underline;
 }
 
+/* --- area tag: a concept's mark that it serves one area (data-area) ---
+   The text of the mark lives in the page, not here, so it is translated with
+   the page and reads without styles, on a phone and in print. This rule only
+   paints it; it cannot say anything the markup does not. */
+.area-tag {
+  display: inline-block;
+  padding: 0 .55em;
+  margin-left: .5em;
+  font-size: .72rem;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: .02em;
+  color: var(--fg);
+  background: var(--term-bg-hover);
+  border: 1px solid var(--term-accent);
+  border-radius: 999px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.term-header .area-tag {
+  margin-right: auto;
+}
+
 @media (max-width: 640px) {
   .term-card {
     position: fixed;
