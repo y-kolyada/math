@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Дискретное: счёт, рекуррентность, графы · math-core · ai|</title>
 <!-- meta: built by tools/build-meta.py - do not edit by hand -->
-<meta name="description" content="Область конечного: как считать не перебирая, как решать рекуррентность и почему перестановки оказались первой группой в истории.">
+<meta name="description" content="Область конечного: как считать не перебирая, как решать рекуррентность и почему перестановки оказались первой группой Группа × Множество с ассоциативной...">
 <link rel="canonical" href="https://y-kolyada.github.io/math/ru/03.html">
 <link rel="alternate" hreflang="ru" href="https://y-kolyada.github.io/math/ru/03.html">
 <link rel="alternate" hreflang="en" href="https://y-kolyada.github.io/math/en/03.html">
@@ -15,12 +15,12 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="math-core">
 <meta property="og:title" content="Дискретное: счёт, рекуррентность, графы">
-<meta property="og:description" content="Область конечного: как считать не перебирая, как решать рекуррентность и почему перестановки оказались первой группой в истории.">
+<meta property="og:description" content="Область конечного: как считать не перебирая, как решать рекуррентность и почему перестановки оказались первой группой Группа × Множество с ассоциативной...">
 <meta property="og:url" content="https://y-kolyada.github.io/math/ru/03.html">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Дискретное: счёт, рекуррентность, графы","description":"Область конечного: как считать не перебирая, как решать рекуррентность и почему перестановки оказались первой группой в истории.","url":"https://y-kolyada.github.io/math/ru/03.html","inLanguage":"ru","isPartOf":{"@type":"WebSite","name":"math-core","url":"https://y-kolyada.github.io/math/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Дискретное: счёт, рекуррентность, графы","description":"Область конечного: как считать не перебирая, как решать рекуррентность и почему перестановки оказались первой группой Группа × Множество с ассоциативной...","url":"https://y-kolyada.github.io/math/ru/03.html","inLanguage":"ru","isPartOf":{"@type":"WebSite","name":"math-core","url":"https://y-kolyada.github.io/math/"}}</script>
 <!-- /meta -->
 <link rel="stylesheet" href="../assets/style.css?v=1">
 <script>
@@ -94,8 +94,8 @@
 
   <main id="main">
     <h1>Дискретное: счёт, рекуррентность, графы</h1>
-    <p class="page-size" data-words="1145">Слов: 1145</p>
-    <p class="lead">Область конечного: как считать не перебирая, как решать рекуррентность и почему перестановки оказались первой группой в истории.</p>
+    <p class="page-size" data-words="1199">Слов: 1199</p>
+    <p class="lead">Область конечного: как считать не перебирая, как решать рекуррентность и почему <span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">перестановки оказались первой группой</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Группа</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Множество с ассоциативной операцией, нейтральным элементом и обратным к каждому элементу.</span><span class="term-links"><a href="glossary.html#term-group">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span> в истории.</p>
 
     <div class="box key" id="key-idea">
       <h2>Главная мысль страницы <a class="anchor-link" href="#key-idea" aria-label="ссылка на этот блок">#</a></h2>
@@ -107,7 +107,7 @@
 
     <p>Правило суммы: если объект выбирается либо из первого набора, либо из второго, и наборы не пересекаются, число способов складывается. Правило произведения: если выбор делается в два независимых шага, число способов умножается. Всё остальное в комбинаторике выводится из этих двух, и ошибки почти всегда означают, что независимость шагов была мнимой, а наборы пересекались.</p>
 
-    <p>Отсюда сразу получаются три базовых счёта. Число слов длины k из алфавита в n букв равно <span class="math" data-tex="n^k">n^k</span>. Число способов расставить n различных предметов в ряд равно <span class="math" data-tex="n!">n!</span>. Число способов выбрать k предметов из n без учёта порядка равно биномиальному коэффициенту.</p>
+    <p>Отсюда сразу получаются три базовых счёта. Число слов длины k из алфавита в n букв равно <span class="math" data-tex="n^k">n^k</span>. Число способов расставить n различных предметов в ряд равно <span class="math" data-tex="n!">n!</span>. Число способов выбрать k предметов из n без учёта порядка равно <span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">биномиальному коэффициенту</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Биномиальный коэффициент</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Число способов выбрать k предметов из n без учёта порядка.</span><span class="term-links"><a href="glossary.html#term-binomial">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span>.</p>
 
     <div class="math-block" data-tex="\binom{n}{k} = \frac{n!}{k!\,(n-k)!} = \binom{n}{n-k}">C(n, k) = n! / (k! · (n−k)!) = C(n, n−k)</div>
 
@@ -150,7 +150,7 @@ print(sum(1 for x in range(1, n + 1) if x % 3 == 0 or x % 5 == 0))
 
     <h2 id="recurrence">4 · Рекуррентность: правило, которое ссылается на себя <a class="anchor-link" href="#recurrence">#</a></h2>
 
-    <p>Рекуррентное соотношение задаёт следующий член через предыдущие. Числа Фибоначчи - самый известный пример, и у них есть замкнутая форма, в которой неожиданно появляется корень из пяти.</p>
+    <p><span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">Рекуррентное соотношение</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Рекуррентность</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Соотношение, задающее очередной член последовательности через предшествующие.</span><span class="term-links"><a href="glossary.html#term-recurrence">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span> задаёт следующий член через предыдущие. Числа Фибоначчи - самый известный пример, и у них есть замкнутая форма, в которой неожиданно появляется корень из пяти.</p>
 
     <div class="math-block" data-tex="F_n = \frac{\varphi^n - \psi^n}{\sqrt5}, \qquad \varphi = \frac{1+\sqrt5}{2}">Fₙ = (φⁿ − ψⁿ) / √5,   φ = (1 + √5) / 2</div>
 
@@ -171,7 +171,7 @@ print(fib(50) == 12586269025)
 
     <h2 id="graphs">5 · Графы: структура без координат <a class="anchor-link" href="#graphs">#</a></h2>
 
-    <p>Граф - это множество вершин и множество пар вершин, называемых рёбрами. В определении нет ни расстояний, ни углов, ни положения на плоскости: граф задаёт только связи. Две картинки, нарисованные совершенно по-разному, изображают один и тот же граф, если совпадают связи, и это первый в карте пример того, что форма объекта не важна, а важна его структура.</p>
+    <p><span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">Граф - это множество вершин</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Граф</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Множество вершин вместе с множеством пар вершин, называемых рёбрами.</span><span class="term-links"><a href="glossary.html#term-graph">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span> и множество пар вершин, называемых рёбрами. В определении нет ни расстояний, ни углов, ни положения на плоскости: граф задаёт только связи. Две картинки, нарисованные совершенно по-разному, изображают один и тот же граф, если совпадают связи, и это первый в карте пример того, что форма объекта не важна, а важна его структура.</p>
 
     <p>Классический результат области родился из прогулки: можно ли пройти по всем семи мостам Кёнигсберга ровно по разу. Ответ отрицательный, и доказательство занимает строчку: в такой прогулке каждая вершина, кроме начала и конца, посещается чётное число раз, значит вершин с нечётным числом рёбер должно быть не больше двух, а их четыре.</p>
 

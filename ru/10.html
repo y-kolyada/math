@@ -94,7 +94,7 @@
 
   <main id="main">
     <h1>Примеры: школьный уровень</h1>
-    <p class="page-size" data-words="1120">Слов: 1120</p>
+    <p class="page-size" data-words="1148">Слов: 1148</p>
     <p class="lead">Девять разборов, где ответ получается счётом на числах, а проверить его может любой, у кого есть калькулятор или интерпретатор.</p>
 
     <div class="box key" id="key-idea">
@@ -159,7 +159,7 @@ while p &gt; 0.5:
 print(n, round(1 - p, 4))
 # =&gt; 23 0.5073</code></pre>
 
-    <div class="prints"><strong>Почему так:</strong> интуиция сравнивает себя со всеми остальными и получает двадцать два сравнения. Но сравниваются все пары, а их двести пятьдесят три. Считать удобнее через противоположное событие: вероятность того, что все дни разные, перемножается по людям и падает быстро. Приём «посчитай обратное» - самый полезный в элементарной вероятности: прямое событие распадается на множество случаев с перекрытиями, а противоположное обычно одно и считается произведением. Заодно обратите внимание, что ответ не зависит от того, в какой день родились вы: совпадение ищется между любыми двумя людьми.</div>
+    <div class="prints"><strong>Почему так:</strong> интуиция сравнивает себя со всеми остальными и получает двадцать два сравнения. Но сравниваются все пары, а их двести пятьдесят три. Считать удобнее через <span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">противоположное событие</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Формула Байеса</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Правило пересчёта вероятности гипотезы после наблюдения.</span><span class="term-links"><a href="glossary.html#term-bayes">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span>: вероятность того, что все дни разные, перемножается по людям и падает быстро. Приём «посчитай обратное» - самый полезный в элементарной вероятности: прямое событие распадается на множество случаев с перекрытиями, а противоположное обычно одно и считается произведением. Заодно обратите внимание, что ответ не зависит от того, в какой день родились вы: совпадение ищется между любыми двумя людьми.</div>
 
     <h2 id="quadratic">6 · Дискриминант и проверка корней <a class="anchor-link" href="#quadratic">#</a></h2>
 
@@ -215,7 +215,7 @@ rounded = price.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
 print(price, rounded, (price - rounded) * 1000)
 # =&gt; 18.5907 18.59 0.7000</code></pre>
 
-    <div class="prints"><strong>Почему так:</strong> на одной покупке разница меньше копейки и не видна. На тысяче покупок набегает семьдесят копеек, на миллионе - семьсот рублей, и знак этой разницы одинаков, потому что округление здесь всегда вниз. Поэтому в финансовом счёте округляют один раз в конце и считают в целых копейках, а не в дробных рублях. Тема 02 называла причину: у двоичной дроби и у десятичной записи разные множества точно представимых чисел.</div>
+    <div class="prints"><strong>Почему так:</strong> на одной покупке разница меньше копейки и не видна. На тысяче покупок набегает семьдесят копеек, на миллионе - семьсот рублей, и знак этой разницы одинаков, потому что <span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">округление здесь всегда вниз</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Потеря значащих цифр</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Уничтожение верных цифр при вычитании почти равных чисел в машинной арифметике.</span><span class="term-links"><a href="glossary.html#term-cancellation">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span>. Поэтому в финансовом счёте округляют один раз в конце и считают в целых копейках, а не в дробных рублях. Тема 02 называла причину: у двоичной дроби и у десятичной записи разные множества точно представимых чисел.</div>
 
     <div class="box key" id="artifacts">
       <h2>Артефакты: что у вас есть после этой страницы <a class="anchor-link" href="#artifacts">#</a></h2>

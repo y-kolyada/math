@@ -94,7 +94,7 @@
 
   <main id="main">
     <h1>Примеры: профессорский уровень</h1>
-    <p class="page-size" data-words="1111">Слов: 1111</p>
+    <p class="page-size" data-words="1142">Слов: 1142</p>
     <p class="lead">Семь разборов, в каждом из которых правильная формула даёт неправильный ответ, и видно, какое именно условие было существенным.</p>
 
     <div class="box key" id="key-idea">
@@ -163,7 +163,7 @@ print(round((81 + 192) / (87 + 263), 3), round((234 + 55) / (270 + 80), 3))
 # =&gt; 0.931 0.867 0.73 0.688
 # =&gt; 0.78 0.826</code></pre>
 
-    <div class="prints"><strong>Почему так:</strong> A выигрывает в обеих группах и проигрывает в сумме. Причина в составе: A давали в основном при крупных камнях, которые лечатся хуже, B - при мелких. Объединение групп с разным составом сравнивает уже не методы, а пациентов. Числа взяты из настоящего исследования о лечении камней в почках. Вывод практический: доля, посчитанная по смеси групп, не является оценкой эффекта, пока состав не выровнен, и никакое увеличение выборки этого не чинит.</div>
+    <div class="prints"><strong>Почему так:</strong> A <span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">выигрывает в обеих группах</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Парадокс Симпсона</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Обращение направления эффекта при объединении групп с разным составом.</span><span class="term-links"><a href="glossary.html#term-simpson-paradox">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span> и проигрывает в сумме. Причина в составе: A давали в основном при крупных камнях, которые лечатся хуже, B - при мелких. Объединение групп с разным составом сравнивает уже не методы, а пациентов. Числа взяты из настоящего исследования о лечении камней в почках. Вывод практический: доля, посчитанная по смеси групп, не является оценкой эффекта, пока состав не выровнен, и никакое увеличение выборки этого не чинит.</div>
 
     <h2 id="multiple">5 · Двадцать проверок дают открытие из ничего <a class="anchor-link" href="#multiple">#</a></h2>
 
@@ -200,7 +200,7 @@ print(naive * big, stable * big)
 # =&gt; 7.450580596923828e-09 1e-08
 # =&gt; 0.7450580596923828 1.0</code></pre>
 
-    <div class="prints"><strong>Почему так:</strong> произведение корней обязано равняться свободному члену, то есть единице, по теореме Виета. Школьная формула дала 0,745 вместо единицы: четверть ответа потеряна. Причина - вычитание почти равных чисел, при котором совпадающие старшие цифры уничтожаются и наружу выходит мусор из младших. Устойчивая формула получает тот же корень делением и теряет ноль цифр. Математически формулы тождественны, численно - нет, и это различие не видно в тексте учебника. Признак беды общий: если в выражении вычитаются близкие величины, его переписывают так, чтобы вычитание исчезло, обычно умножением на сопряжённое.</div>
+    <div class="prints"><strong>Почему так:</strong> произведение корней обязано равняться свободному члену, то есть единице, по теореме Виета. Школьная формула дала 0,745 вместо единицы: четверть ответа потеряна. Причина - <span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">вычитание почти равных чисел</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Потеря значащих цифр</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Уничтожение верных цифр при вычитании почти равных чисел в машинной арифметике.</span><span class="term-links"><a href="glossary.html#term-cancellation">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span>, при котором совпадающие старшие цифры уничтожаются и наружу выходит мусор из младших. Устойчивая формула получает тот же корень делением и теряет ноль цифр. Математически формулы тождественны, численно - нет, и это различие не видно в тексте учебника. Признак беды общий: если в выражении вычитаются близкие величины, его переписывают так, чтобы вычитание исчезло, обычно умножением на сопряжённое.</div>
 
     <h2 id="chaos">7 · Детерминированное и непредсказуемое <a class="anchor-link" href="#chaos">#</a></h2>
 
