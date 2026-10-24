@@ -6,8 +6,14 @@ This folder holds the **source** of each diagram in Mermaid: `NN-name.mmd`, wher
 
 **State the truth about the renderer here.** If no Mermaid renderer is installed, the SVG on the page is drawn by hand from this source rather than exported from it, and this file must say that plainly - otherwise the folder quietly becomes the lie "rendered from mermaid". When a renderer or a viewer appears, the `.mmd` becomes the master and the SVG the derivative.
 
-Fill the table as diagrams appear and delete this sentence with the placeholder row:
+**Состояние рендерера на этом сайте: Mermaid не установлен.** Поэтому `.mmd` здесь - источник смысла, а не мастер-файл: каждая схема нарисована руками по своему источнику, а не выгружена из него. Как только появится рендерер, `.mmd` станет мастером, а SVG производной, и эта строка изменится.
 
 | Source | Page | What it shows |
 | :-- | :-- | :-- |
-| `01-name.mmd` | `ru/01.html` | one line on what the reader is meant to see |
+| `01-sets.mmd` | `ru/01.html` | Два пересекающихся множества: пересечение как «и», объединение как «или» |
+| `02-numbers.mmd` | `ru/02.html` | Вложенность числовых множеств от натуральных до комплексных |
+| `03-bridges.mmd` | `ru/03.html` | Граф семи мостов: четыре вершины нечётной степени, обхода нет |
+| `06-limit.mmd` | `ru/06.html` | Коридор шириной два эпсилона и номер, начиная с которого его не покидают |
+| `06-derivative.mmd` | `ru/06.html` | Секущая, переходящая в касательную при сближении точек |
+| `06-integral.mmd` | `ru/06.html` | Столбики под кривой и предел суммы их площадей |
+| `06-series.mmd` | `ru/06.html` | Сходящиеся и расходящиеся частичные суммы на одном холсте |

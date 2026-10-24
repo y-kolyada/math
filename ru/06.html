@@ -94,7 +94,7 @@
 
   <main id="main">
     <h1>Предел и непрерывность: анализ одной переменной</h1>
-    <p class="page-size" data-words="1183">Слов: 1183</p>
+    <p class="page-size" data-words="1267">Слов: 1267</p>
     <p class="lead">Где впервые нужна полнота: предел, непрерывность, производная, интеграл и ряд - пять понятий, выросших из одного определения.</p>
 
     <div class="box key" id="key-idea">
@@ -118,6 +118,32 @@ print(n, round(seq(n), 9))
     <p>Машина нашла номер для одной конкретной точности, и это всё, на что она способна: определение требует номера для каждой точности, то есть бесконечного числа проверок. Доказательство заменяет перебор формулой - в этом примере достаточно взять номер больше пяти, делённых на ε.</p>
 
     <div class="prints"><strong>Что спрашивают:</strong> «Сходящаяся последовательность ограничена?» Да: начиная с некоторого номера все члены лежат в единичной окрестности предела, а до него их конечное число. Обратное неверно, чередование нуля и единицы ограничено и предела не имеет.</div>
+
+    <div class="box">
+      <svg role="img" aria-label="Горизонтальная прямая предела с коридором шириной два эпсилона: точки последовательности входят в коридор начиная с номера N и больше его не покидают." viewBox="0 0 320 160" width="100%" style="max-width:320px;height:auto;display:block;margin:0 auto" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M30 140 L306 140"/>
+        <path d="M30 140 L30 20"/>
+        <path d="M36 74 L300 74" stroke-dasharray="4 3"/>
+        <path d="M36 56 L300 56" stroke-dasharray="2 3"/>
+        <path d="M36 92 L300 92" stroke-dasharray="2 3"/>
+        <rect x="150" y="56" width="150" height="36" fill="currentColor" fill-opacity="0.08" stroke="none"/>
+        <circle cx="52" cy="124" r="3" fill="currentColor" stroke="none"/>
+        <circle cx="78" cy="106" r="3" fill="currentColor" stroke="none"/>
+        <circle cx="104" cy="96" r="3" fill="currentColor" stroke="none"/>
+        <circle cx="130" cy="86" r="3" fill="currentColor" stroke="none"/>
+        <circle cx="160" cy="80" r="3" fill="currentColor" stroke="none"/>
+        <circle cx="190" cy="70" r="3" fill="currentColor" stroke="none"/>
+        <circle cx="220" cy="77" r="3" fill="currentColor" stroke="none"/>
+        <circle cx="250" cy="72" r="3" fill="currentColor" stroke="none"/>
+        <circle cx="280" cy="75" r="3" fill="currentColor" stroke="none"/>
+        <path d="M150 140 L150 100" stroke-dasharray="3 3"/>
+        <text x="150" y="154" font-size="13" fill="currentColor" stroke="none" text-anchor="middle">N</text>
+        <text x="24" y="78" font-size="13" fill="currentColor" stroke="none" text-anchor="end">a</text>
+        <text x="24" y="60" font-size="13" fill="currentColor" stroke="none" text-anchor="end">a+ε</text>
+        <text x="24" y="96" font-size="13" fill="currentColor" stroke="none" text-anchor="end">a−ε</text>
+      </svg>
+      <p class="dim">Схема 4. Определение предела целиком: сначала называют точность ε, потом находят номер N, и дальше коридор не покидается.</p>
+    </div>
 
     <h2 id="completeness">2 · Полнота в работе <a class="anchor-link" href="#completeness">#</a></h2>
 
@@ -167,6 +193,21 @@ print(round(num, 9), round(math.cos(1), 9))
 
     <div class="prints"><strong>Что спрашивают:</strong> «Непрерывная функция дифференцируема?» Нет. Модуль числа непрерывен всюду и не имеет производной в нуле. Хуже того, существует функция, непрерывная всюду и не дифференцируемая ни в одной точке; её построил Вейерштрасс, и она закрыла надежду на то, что непрерывность автоматически означает гладкость.</div>
 
+    <div class="box">
+      <svg role="img" aria-label="Кривая с двумя прямыми через точку: секущая через две точки и касательная, в которую секущая переходит при сближении точек." viewBox="0 0 320 160" width="100%" style="max-width:320px;height:auto;display:block;margin:0 auto" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M30 140 L306 140"/>
+        <path d="M30 140 L30 20"/>
+        <path d="M40 128 Q150 24 290 46"/>
+        <path d="M52 112 L250 44"/>
+        <path d="M86 112 L270 56" stroke-dasharray="4 3"/>
+        <circle cx="96" cy="84" r="3.5" fill="currentColor" stroke="none"/>
+        <circle cx="206" cy="59" r="3.5" fill="currentColor" stroke="none"/>
+        <text x="10" y="30" font-size="13" fill="currentColor" stroke="none">секущая</text>
+        <text x="170" y="132" font-size="13" fill="currentColor" stroke="none">касательная</text>
+      </svg>
+      <p class="dim">Схема 5. Производная - это наклон предельного положения секущей: вторая точка приближается к первой, и прямая перестаёт зависеть от неё.</p>
+    </div>
+
     <h2 id="integral">5 · Интеграл: сумма, у которой взят предел <a class="anchor-link" href="#integral">#</a></h2>
 
     <div class="math-block" data-tex="\int_0^1 x^2\,dx = \lim_{n\to\infty} \sum_{k=0}^{n-1} \left(\frac{k + 0{,}5}{n}\right)^{2} \frac{1}{n} = \frac13"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msubsup><mo>&#x0222B;</mo><mn>0</mn><mn>1</mn></msubsup><msup><mi>x</mi><mn>2</mn></msup><mspace width="0.167em" /><mi>d</mi><mi>x</mi><mo>&#x0003D;</mo><msub><mo>lim</mo><mrow><mi>n</mi><mo>&#x02192;</mo><mo>&#x0221E;</mo></mrow></msub><munderover><mo>&#x02211;</mo><mrow><mi>k</mi><mo>&#x0003D;</mo><mn>0</mn></mrow><mrow><mi>n</mi><mo>&#x02212;</mo><mn>1</mn></mrow></munderover><msup><mrow><mo stretchy="true" fence="true" form="prefix">&#x00028;</mo><mfrac><mrow><mi>k</mi><mo>&#x0002B;</mo><mn>0</mn><mrow><mo>&#x0002C;</mo></mrow><mn>5</mn></mrow><mrow><mi>n</mi></mrow></mfrac><mo stretchy="true" fence="true" form="postfix">&#x00029;</mo></mrow><mrow><mn>2</mn></mrow></msup><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><mo>&#x0003D;</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><annotation encoding="application/x-tex">\int_0^1 x^2\,dx = \lim_{n\to\infty} \sum_{k=0}^{n-1} \left(\frac{k + 0{,}5}{n}\right)^{2} \frac{1}{n} = \frac13</annotation></semantics></math></div>
@@ -179,6 +220,24 @@ print(round(s, 6))
     <p><span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">Интеграл определяется как предел сумм</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Интеграл</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Предел интегральных сумм при измельчении разбиения.</span><span class="term-links"><a href="glossary.html#term-integral">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span> площадей прямоугольников, и счёт выше буквально вычисляет одну такую сумму при миллионе прямоугольников. Основная теорема анализа связывает интеграл с производной и позволяет не считать пределы сумм вручную, но определение остаётся таким: интеграл - это предел, а не первообразная.</p>
 
     <div class="prints"><strong>Что спрашивают:</strong> «Всякая ли функция интегрируема?» По Риману - нет: функция, равная единице на дробях и нулю на остальных числах, не интегрируема, потому что верхние суммы всегда равны единице, а нижние нулю. Эта дыра и заставила в теме 08 придумать меру и интеграл Лебега.</div>
+
+    <div class="box">
+      <svg role="img" aria-label="Кривая и столбики под ней: площадь под кривой приближается суммой площадей прямоугольников, и при измельчении разбиения разница исчезает." viewBox="0 0 320 160" width="100%" style="max-width:320px;height:auto;display:block;margin:0 auto" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M30 140 L306 140"/>
+        <path d="M30 140 L30 20"/>
+        <rect x="42" y="126" width="30" height="14" fill="currentColor" fill-opacity="0.1"/>
+        <rect x="74" y="114" width="30" height="26" fill="currentColor" fill-opacity="0.1"/>
+        <rect x="106" y="98" width="30" height="42" fill="currentColor" fill-opacity="0.1"/>
+        <rect x="138" y="80" width="30" height="60" fill="currentColor" fill-opacity="0.1"/>
+        <rect x="170" y="62" width="30" height="78" fill="currentColor" fill-opacity="0.1"/>
+        <rect x="202" y="48" width="30" height="92" fill="currentColor" fill-opacity="0.1"/>
+        <rect x="234" y="40" width="30" height="100" fill="currentColor" fill-opacity="0.1"/>
+        <rect x="266" y="36" width="30" height="104" fill="currentColor" fill-opacity="0.1"/>
+        <path d="M42 130 Q170 44 296 34"/>
+        <text x="44" y="32" font-size="13" fill="currentColor" stroke="none">f(x)</text>
+      </svg>
+      <p class="dim">Схема 6. Интеграл по определению: сумма площадей столбиков, у которой взят предел при стремлении ширины к нулю.</p>
+    </div>
 
     <h2 id="series">6 · Ряды: когда бесконечная сумма имеет смысл <a class="anchor-link" href="#series">#</a></h2>
 
@@ -195,6 +254,20 @@ print(round(h, 6), h &gt; 14)
     <div class="prints"><strong>Что спрашивают:</strong> «Ряд из обратных квадратов?» Сходится, и его сумма равна квадрату числа пи, делённому на шесть. Это задача Базеля, которую решил Эйлер, и она показывает, как резко меняется поведение ряда при небольшом изменении показателя степени.</div>
 
     <p>Отдельная ловушка ждёт того, кто переставляет слагаемые. У <span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">условно сходящегося ряда</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Условная сходимость</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Сходимость ряда без сходимости ряда из модулей.</span><span class="term-links"><a href="glossary.html#term-series">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span> перестановка меняет сумму, и теорема Римана утверждает большее: подходящей перестановкой из такого ряда можно получить любое наперёд заданное число. Привычное правило «от перемены мест слагаемых сумма не меняется» верно для конечных сумм и ломается для бесконечных, и это ещё один случай, когда бесконечность требует осторожности, а не смелости.</p>
+
+    <div class="box">
+      <svg role="img" aria-label="Два ряда частичных сумм: один выходит на горизонтальную прямую и остаётся при ней, другой продолжает подниматься без предела." viewBox="0 0 320 160" width="100%" style="max-width:320px;height:auto;display:block;margin:0 auto" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M30 140 L306 140"/>
+        <path d="M30 140 L30 20"/>
+        <path d="M36 52 L300 52" stroke-dasharray="4 3"/>
+        <path d="M40 128 L70 96 L100 76 L130 66 L160 60 L190 57 L220 55 L250 54 L286 53"/>
+        <path d="M40 132 L70 118 L100 108 L130 100 L160 93 L190 86 L220 78 L250 68 L286 56" stroke-dasharray="5 3"/>
+        <text x="24" y="56" font-size="13" fill="currentColor" stroke="none" text-anchor="end">S</text>
+        <text x="10" y="30" font-size="13" fill="currentColor" stroke="none">сходится</text>
+        <text x="176" y="132" font-size="13" fill="currentColor" stroke="none">расходится</text>
+      </svg>
+      <p class="dim">Схема 7. Убывание слагаемых к нулю необходимо и недостаточно: гармонический ряд ведёт себя как пунктир и уходит выше любой прямой.</p>
+    </div>
 
     <div class="box key" id="artifacts">
       <h2>Артефакты: что у вас есть после этой страницы <a class="anchor-link" href="#artifacts">#</a></h2>

@@ -94,7 +94,7 @@
 
   <main id="main">
     <h1>Язык и логика: утверждение, множество, доказательство</h1>
-    <p class="page-size" data-words="1539">Слов: 1539</p>
+    <p class="page-size" data-words="1558">Слов: 1558</p>
     <p class="lead">Шесть вещей, на которых стоит весь остальной курс, и седьмая, без которой их не прочитать: утверждение, множество, отображение, квантор, индукция, доказательство и само письмо.</p>
 
     <div class="box key" id="key-idea">
@@ -132,6 +132,19 @@ print((u - (a | b)) == ((u - a) &amp; (u - b)))
     <p>Вторая строка проверяет правило Де Моргана на конкретном примере: дополнение объединения совпало с пересечением дополнений. Одна проверка не доказывает правило, но мгновенно ловит ошибку в его формулировке, если вы её переставили местами.</p>
 
     <div class="prints"><strong>Что спрашивают:</strong> «Сколько подмножеств у множества из n элементов?» Ровно <span class="math" data-tex="2^n"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">2^n</annotation></semantics></math></span>: каждый элемент независимо либо взят, либо нет. Пустое множество и само множество в это число входят, и забывают обычно именно их.</div>
+
+    <div class="box">
+      <svg role="img" aria-label="Два пересекающихся круга: множество А слева, множество Б справа, общая часть закрашена и подписана как пересечение." viewBox="0 0 320 160" width="100%" style="max-width:320px;height:auto;display:block;margin:0 auto" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="118" cy="78" r="56"/>
+        <circle cx="196" cy="78" r="56"/>
+        <path d="M157 30 a56 56 0 0 1 0 96 a56 56 0 0 1 0 -96" fill="currentColor" fill-opacity="0.13" stroke="none"/>
+        <text x="74" y="40" font-size="13" fill="currentColor" stroke="none">A</text>
+        <text x="240" y="40" font-size="13" fill="currentColor" stroke="none">B</text>
+        <path d="M157 140 L157 100" stroke-dasharray="3 3"/>
+        <text x="157" y="154" font-size="13" fill="currentColor" stroke="none" text-anchor="middle">A ∩ B</text>
+      </svg>
+      <p class="dim">Схема 1. Пересечение - это «и», объединение - «или»: операции над множествами повторяют связки из первого раздела.</p>
+    </div>
 
     <h2 id="maps">3 · Отображение: функция как правило <a class="anchor-link" href="#maps">#</a></h2>
 
