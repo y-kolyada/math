@@ -94,7 +94,7 @@
 
   <main id="main">
     <h1>Случайность: мера, распределение, вывод</h1>
-    <p class="page-size" data-words="1185">Слов: 1185</p>
+    <p class="page-size" data-words="1179">Слов: 1179</p>
     <p class="lead">Что мы вправе утверждать, видя конечную выборку, и почему интуиция о вероятности ошибается чаще, чем в любой другой области.</p>
 
     <div class="box key" id="key-idea">
@@ -120,7 +120,7 @@ print(ways, flush, round(flush / ways * 100, 4))
 
     <h2 id="bayes">2 · Условная вероятность и формула Байеса <a class="anchor-link" href="#bayes">#</a></h2>
 
-    <div class="math-block" data-tex="P(A \mid B) = \frac{P(B \mid A)\, P(A)}{P(B)}">P(A | B) = P(B | A) · P(A) / P(B)</div>
+    <div class="math-block" data-tex="P(A \mid B) = \frac{P(B \mid A)\, P(A)}{P(B)}"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo stretchy="false">&#x00028;</mo><mi>A</mi><mo>&#x02223;</mo><mi>B</mi><mo stretchy="false">&#x00029;</mo><mo>&#x0003D;</mo><mfrac><mrow><mi>P</mi><mo stretchy="false">&#x00028;</mo><mi>B</mi><mo>&#x02223;</mo><mi>A</mi><mo stretchy="false">&#x00029;</mo><mspace width="0.167em" /><mi>P</mi><mo stretchy="false">&#x00028;</mo><mi>A</mi><mo stretchy="false">&#x00029;</mo></mrow><mrow><mi>P</mi><mo stretchy="false">&#x00028;</mo><mi>B</mi><mo stretchy="false">&#x00029;</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">P(A \mid B) = \frac{P(B \mid A)\, P(A)}{P(B)}</annotation></semantics></math></div>
 
     <p><span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">Формула переворачивает условие</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Формула Байеса</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Правило пересчёта вероятности гипотезы после наблюдения.</span><span class="term-links"><a href="glossary.html#term-bayes">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span>, и именно это нужно в жизни: тест даёт положительный результат, а знать хочется не вероятность положительного теста при болезни, а вероятность болезни при положительном тесте. Эти два числа различаются в десятки раз, и их смешение называется ошибкой базовой ставки.</p>
 

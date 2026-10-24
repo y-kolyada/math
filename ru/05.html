@@ -94,7 +94,7 @@
 
   <main id="main">
     <h1>Линейная алгебра: матрицы, формы, собственные числа</h1>
-    <p class="page-size" data-words="1232">Слов: 1232</p>
+    <p class="page-size" data-words="1220">Слов: 1220</p>
     <p class="lead">Единственный класс задач, который решается до конца и машинно: линейные. Отсюда же берётся вся школьная геометрия.</p>
 
     <div class="box key" id="key-idea">
@@ -107,7 +107,7 @@
 
     <p>Возьмите пространство векторов и правило, переводящее вектор в вектор. Оно линейно, если выполняются два равенства сразу:</p>
 
-    <div class="math-block" data-tex="f(u + v) = f(u) + f(v), \qquad f(\lambda u) = \lambda\, f(u)">f(u + v) = f(u) + f(v),   f(λu) = λ · f(u)</div>
+    <div class="math-block" data-tex="f(u + v) = f(u) + f(v), \qquad f(\lambda u) = \lambda\, f(u)"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">&#x00028;</mo><mi>u</mi><mo>&#x0002B;</mo><mi>v</mi><mo stretchy="false">&#x00029;</mo><mo>&#x0003D;</mo><mi>f</mi><mo stretchy="false">&#x00028;</mo><mi>u</mi><mo stretchy="false">&#x00029;</mo><mo>&#x0002B;</mo><mi>f</mi><mo stretchy="false">&#x00028;</mo><mi>v</mi><mo stretchy="false">&#x00029;</mo><mo>&#x0002C;</mo><mspace width="2em" /><mi>f</mi><mo stretchy="false">&#x00028;</mo><mi>&#x003BB;</mi><mi>u</mi><mo stretchy="false">&#x00029;</mo><mo>&#x0003D;</mo><mi>&#x003BB;</mi><mspace width="0.167em" /><mi>f</mi><mo stretchy="false">&#x00028;</mo><mi>u</mi><mo stretchy="false">&#x00029;</mo></mrow><annotation encoding="application/x-tex">f(u + v) = f(u) + f(v), \qquad f(\lambda u) = \lambda\, f(u)</annotation></semantics></math></div>
 
     <p>Из них следует, что достаточно знать образы базисных векторов: любой вектор раскладывается по базису, а образ раскладывается так же с теми же коэффициентами. Столбцы матрицы - это и есть образы базисных векторов, записанные в координатах. Умножение матрицы на вектор - не определение из ниоткуда, а запись этого рассуждения.</p>
 
@@ -158,7 +158,7 @@ print(det2([[3, 1], [2, 4]]), det2([[1, 2], [2, 4]]))
 
     <p><span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">Собственный вектор</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Собственное число</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Коэффициент растяжения вектора, который отображение не поворачивает.</span><span class="term-links"><a href="glossary.html#term-eigen">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span> - ненулевой вектор, который отображение только растягивает, не поворачивая. Коэффициент растяжения и есть собственное число.</p>
 
-    <div class="math-block" data-tex="A v = \lambda v, \qquad \det(A - \lambda E) = 0">Av = λv,   det(A − λE) = 0</div>
+    <div class="math-block" data-tex="A v = \lambda v, \qquad \det(A - \lambda E) = 0"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>A</mi><mi>v</mi><mo>&#x0003D;</mo><mi>&#x003BB;</mi><mi>v</mi><mo>&#x0002C;</mo><mspace width="2em" /><mo movablelimits="true">det</mo><mo stretchy="false">&#x00028;</mo><mi>A</mi><mo>&#x02212;</mo><mi>&#x003BB;</mi><mi>E</mi><mo stretchy="false">&#x00029;</mo><mo>&#x0003D;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A v = \lambda v, \qquad \det(A - \lambda E) = 0</annotation></semantics></math></div>
 
     <pre><code data-run="py">a = [[2, 1], [1, 2]]
 v, lam = [1, 1], 3

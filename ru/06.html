@@ -94,7 +94,7 @@
 
   <main id="main">
     <h1>Предел и непрерывность: анализ одной переменной</h1>
-    <p class="page-size" data-words="1209">Слов: 1209</p>
+    <p class="page-size" data-words="1183">Слов: 1183</p>
     <p class="lead">Где впервые нужна полнота: предел, непрерывность, производная, интеграл и ряд - пять понятий, выросших из одного определения.</p>
 
     <div class="box key" id="key-idea">
@@ -105,7 +105,7 @@
 
     <h2 id="limit">1 · Предел последовательности <a class="anchor-link" href="#limit">#</a></h2>
 
-    <div class="math-block" data-tex="\forall \varepsilon &gt; 0\ \exists N\ \forall n &gt; N: \ |a_n - a| &lt; \varepsilon">для любого ε &gt; 0 найдётся N, что при всех n &gt; N выполнено |aₙ − a| &lt; ε</div>
+    <div class="math-block" data-tex="\forall \varepsilon &gt; 0\ \exists N\ \forall n &gt; N: \ |a_n - a| &lt; \varepsilon"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo>&#x02200;</mo><mi>&#x003B5;</mi><mo>&#x0003E;</mo><mn>0</mn><mtext>&#x000A0;</mtext><mo>&#x02203;</mo><mi>N</mi><mtext>&#x000A0;</mtext><mo>&#x02200;</mo><mi>n</mi><mo>&#x0003E;</mo><mi>N</mi><mi>:</mi><mtext>&#x000A0;</mtext><mo stretchy="false">&#x0007C;</mo><msub><mi>a</mi><mi>n</mi></msub><mo>&#x02212;</mo><mi>a</mi><mo stretchy="false">&#x0007C;</mo><mo>&#x0003C;</mo><mi>&#x003B5;</mi></mrow><annotation encoding="application/x-tex">\forall \varepsilon &gt; 0\ \exists N\ \forall n &gt; N: \ |a_n - a| &lt; \varepsilon</annotation></semantics></math></div>
 
     <p><span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">Определение читается как игра</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Предел</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Число, к которому последовательность приближается: для любой точности найдётся номер, начиная с которого отклонение меньше неё.</span><span class="term-links"><a href="glossary.html#term-limit">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span>: оппонент называет точность, вы обязаны назвать номер. Выигрываете вы - предел равен a. Порядок кванторов существенен: номер разрешается выбирать после того, как названа точность, и зависеть от неё. Поменяйте порядок, и получится равномерная сходимость, понятие гораздо более сильное.</p>
 
@@ -169,7 +169,7 @@ print(round(num, 9), round(math.cos(1), 9))
 
     <h2 id="integral">5 · Интеграл: сумма, у которой взят предел <a class="anchor-link" href="#integral">#</a></h2>
 
-    <div class="math-block" data-tex="\int_0^1 x^2\,dx = \lim_{n\to\infty} \sum_{k=0}^{n-1} \left(\frac{k + 0{,}5}{n}\right)^{2} \frac{1}{n} = \frac13">∫₀¹ x² dx = lim (при n → ∞) Σ ((k + 0,5)/n)² · 1/n = 1/3</div>
+    <div class="math-block" data-tex="\int_0^1 x^2\,dx = \lim_{n\to\infty} \sum_{k=0}^{n-1} \left(\frac{k + 0{,}5}{n}\right)^{2} \frac{1}{n} = \frac13"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msubsup><mo>&#x0222B;</mo><mn>0</mn><mn>1</mn></msubsup><msup><mi>x</mi><mn>2</mn></msup><mspace width="0.167em" /><mi>d</mi><mi>x</mi><mo>&#x0003D;</mo><msub><mo>lim</mo><mrow><mi>n</mi><mo>&#x02192;</mo><mo>&#x0221E;</mo></mrow></msub><munderover><mo>&#x02211;</mo><mrow><mi>k</mi><mo>&#x0003D;</mo><mn>0</mn></mrow><mrow><mi>n</mi><mo>&#x02212;</mo><mn>1</mn></mrow></munderover><msup><mrow><mo stretchy="true" fence="true" form="prefix">&#x00028;</mo><mfrac><mrow><mi>k</mi><mo>&#x0002B;</mo><mn>0</mn><mrow><mo>&#x0002C;</mo></mrow><mn>5</mn></mrow><mrow><mi>n</mi></mrow></mfrac><mo stretchy="true" fence="true" form="postfix">&#x00029;</mo></mrow><mrow><mn>2</mn></mrow></msup><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><mo>&#x0003D;</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><annotation encoding="application/x-tex">\int_0^1 x^2\,dx = \lim_{n\to\infty} \sum_{k=0}^{n-1} \left(\frac{k + 0{,}5}{n}\right)^{2} \frac{1}{n} = \frac13</annotation></semantics></math></div>
 
     <pre><code data-run="py">n = 10 ** 6
 s = sum(((k + 0.5) / n) ** 2 / n for k in range(n))
