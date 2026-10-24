@@ -1,3 +1,11 @@
 # what the site states <TAB> expected output <TAB> command
-# One line per claim. Tabs, not spaces. Example from the reference site:
-# set -e не действует внутри условия	0	bash -c 'set -e; if false; then :; fi; echo 0'
+# Утверждения этого батча двух родов. О структуре самого сайта: строка
+# манифеста читает собственную разметку страницы (§19 AGENTS.md) и сверяет
+# с числом, напечатанным на витрине. И о факте, который витрина разбирает
+# на трёх уровнях: равенство 0,999... = 1 проверяется точной дробью, а не
+# плавающей точкой, потому что речь о точном равенстве.
+Пятнадцать разделов в меню витрины	15	grep -c '<li><a href="[0-9][0-9].html"' ru/index.html
+Девять из них разборы областей, три страницы примеров, три банка вопросов	9 3 3	python3 -c 'import re; n = re.findall(r"<span class=.num.>\d+</span>([^<]+)", open("ru/index.html", encoding="utf-8").read()); p = [x for x in n if x.startswith("Примеры")]; q = [x for x in n if x.startswith("Вопросы")]; print(len(n) - len(p) - len(q), len(p), len(q))'
+Четыре языка в переключателе каждой страницы	4	grep -c 'hreflang="[a-z][a-z]" aria-label' ru/index.html
+Частичная сумма ряда из девяток равна единице минус одна десятая в степени n	True	python3 -c 'from fractions import Fraction as F; n = 12; print(sum(F(9, 10**k) for k in range(1, n + 1)) == 1 - F(1, 10**n))'
+Одна треть в десятичной записи умноженная на три даёт ровно единицу	1 True	python3 -c 'from fractions import Fraction as F; t = F(1, 3); print(t * 3, t * 3 == 1)'
