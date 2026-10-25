@@ -581,7 +581,9 @@ mark.search-mark {
 }
 .search-results a:hover,
 .search-results a.picked { background: var(--code); }
-.search-results a.picked { box-shadow: inset 3px 0 0 var(--acc); }
+/* The bar marking the current result is amber like every other accent on
+   the site; --acc is the link blue and read here as a second meaning. */
+.search-results a.picked { box-shadow: inset 3px 0 0 var(--term-accent); }
 .search-title { font-weight: 600; display: block; }
 .search-where {
   display: flex;

@@ -70,7 +70,7 @@
 | `ai-factory-builder` | `4459ad4` | `chore(engine)` - посев правила подписей |
 | `math-core` | `db01160` | `chore(engine)` - воронка, счётчик, янтарная плашка |
 | `ai-factory-builder` | `fd6b373` | `chore(engine)` - посев доработки окна |
-| `math-core` | (эта запись) | `docs(record)` - запись 10 |
+| `math-core` | (эта запись) | `docs(record)` - запись 10 и янтарная черта текущего результата |
 
 ## Приёмка
 
