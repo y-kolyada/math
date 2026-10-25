@@ -639,17 +639,20 @@ body { padding-bottom: 72px; }
   border-color: var(--line) transparent transparent transparent;
 }
 .term-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
+  display: block;
+  padding-right: 36px; /* gutter for the close button: nothing flows into it */
   margin-bottom: 6px;
 }
 .term-title {
-  display: inline-block;
+  display: inline;
   font-weight: 600;
   color: var(--fg);
 }
 .term-close {
+  position: absolute;
+  top: -2px;
+  right: -4px;
   background: none;
   border: none;
   font-size: 1.2rem;
@@ -682,6 +685,26 @@ body { padding-bottom: 72px; }
 }
 .term-links a:hover {
   text-decoration: underline;
+}
+
+/* --- area tag: a concept's mark that it serves one area (data-area) ---
+   The text of the mark lives in the page, not here, so it is translated with
+   the page and reads without styles, on a phone and in print. This rule only
+   paints it; it cannot say anything the markup does not. */
+.area-tag {
+  display: inline-block;
+  padding: 0 .55em;
+  margin-left: .5em;
+  font-size: .72rem;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: .02em;
+  color: var(--fg);
+  background: var(--term-bg-hover);
+  border: 1px solid var(--term-accent);
+  border-radius: 999px;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
 @media (max-width: 640px) {
@@ -1071,3 +1094,17 @@ nav.contents > .page-toc {
 .skip:focus {
   left: 0;
 }
+
+/* Формулы. MathML печётся в разметку генератором tools/build-math.py и живёт
+   обычным текстом: выделяется, произносится синтезатором, масштабируется
+   кнопками размера шрифта и наследует цвет темы. Выключная формула не
+   переносится по строкам ни в одном движке, поэтому её обёртка прокручивается
+   по горизонтали; проверка края знает про этот класс и не считает его браком. */
+math { font-size: inherit; color: inherit; }
+.math-block {
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 1.1em 0;
+  padding-bottom: 2px;
+}
+.math-block math { display: block; margin: 0 auto; min-width: max-content; }

@@ -6,8 +6,22 @@ This folder holds the **source** of each diagram in Mermaid: `NN-name.mmd`, wher
 
 **State the truth about the renderer here.** If no Mermaid renderer is installed, the SVG on the page is drawn by hand from this source rather than exported from it, and this file must say that plainly - otherwise the folder quietly becomes the lie "rendered from mermaid". When a renderer or a viewer appears, the `.mmd` becomes the master and the SVG the derivative.
 
-Fill the table as diagrams appear and delete this sentence with the placeholder row:
+**Состояние рендерера на этом сайте: Mermaid не установлен.** Поэтому `.mmd` здесь - источник смысла, а не мастер-файл: каждая схема нарисована руками по своему источнику, а не выгружена из него. Как только появится рендерер, `.mmd` станет мастером, а SVG производной, и эта строка изменится.
 
 | Source | Page | What it shows |
 | :-- | :-- | :-- |
-| `01-name.mmd` | `ru/01.html` | one line on what the reader is meant to see |
+| `01-sets.mmd` | `ru/01.html` | Два пересекающихся множества: пересечение как «и», объединение как «или» |
+| `02-numbers.mmd` | `ru/02.html` | Вложенность числовых множеств от натуральных до комплексных |
+| `03-bridges.mmd` | `ru/03.html` | Граф семи мостов: четыре вершины нечётной степени, обхода нет |
+| `06-limit.mmd` | `ru/06.html` | Коридор шириной два эпсилона и номер, начиная с которого его не покидают |
+| `06-derivative.mmd` | `ru/06.html` | Секущая, переходящая в касательную при сближении точек |
+| `06-integral.mmd` | `ru/06.html` | Столбики под кривой и предел суммы их площадей |
+| `06-series.mmd` | `ru/06.html` | Сходящиеся и расходящиеся частичные суммы на одном холсте |
+| `03-kinds.mmd` | `ru/03.html` | Ненаправленный и направленный граф рядом: «связаны» против «отсюда туда» |
+| `03-components.mmd` | `ru/03.html` | Одна компонента связности против трёх несообщающихся |
+| `05-eigen.mmd` | `ru/05.html` | Собственный вектор остаётся на своей прямой, обычный поворачивается |
+| `05-cosine.mmd` | `ru/05.html` | Угол между векторами не меняется от их длины: v и 2v дают с u один косинус |
+| `06-circle.mmd` | `ru/06.html` | Единичная окружность: путь длины t задаёт косинус и синус как две координаты |
+| `06-sinx.mmd` | `ru/06.html` | Прямая y = x и кривая y = sin x, сливающиеся у нуля |
+| `06-fourier.mmd` | `ru/06.html` | Два синуса кратных частот и их сумма, которая синусом уже не является |
+| `08-clt.mmd` | `ru/08.html` | Распределение суммы двух кубиков и колокол, к которому стремятся суммы |

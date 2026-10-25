@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Раздел 8 · math-core · ai|</title>
+<title>Случайность: мера, распределение, вывод · math-core · ai|</title>
 <!-- meta: built by tools/build-meta.py - do not edit by hand -->
-<meta name="description" content="Лид страницы: о чём она и кому нужна.">
+<meta name="description" content="Что мы вправе утверждать, видя конечную выборку, и почему интуиция о вероятности ошибается чаще, чем в любой другой области.">
 <link rel="canonical" href="https://y-kolyada.github.io/math/ru/08.html">
 <link rel="alternate" hreflang="ru" href="https://y-kolyada.github.io/math/ru/08.html">
 <link rel="alternate" hreflang="en" href="https://y-kolyada.github.io/math/en/08.html">
@@ -14,13 +14,13 @@
 <link rel="alternate" hreflang="x-default" href="https://y-kolyada.github.io/math/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="math-core">
-<meta property="og:title" content="Раздел 8">
-<meta property="og:description" content="Лид страницы: о чём она и кому нужна.">
+<meta property="og:title" content="Случайность: мера, распределение, вывод">
+<meta property="og:description" content="Что мы вправе утверждать, видя конечную выборку, и почему интуиция о вероятности ошибается чаще, чем в любой другой области.">
 <meta property="og:url" content="https://y-kolyada.github.io/math/ru/08.html">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Раздел 8","description":"Лид страницы: о чём она и кому нужна.","url":"https://y-kolyada.github.io/math/ru/08.html","inLanguage":"ru","isPartOf":{"@type":"WebSite","name":"math-core","url":"https://y-kolyada.github.io/math/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Случайность: мера, распределение, вывод","description":"Что мы вправе утверждать, видя конечную выборку, и почему интуиция о вероятности ошибается чаще, чем в любой другой области.","url":"https://y-kolyada.github.io/math/ru/08.html","inLanguage":"ru","isPartOf":{"@type":"WebSite","name":"math-core","url":"https://y-kolyada.github.io/math/"}}</script>
 <!-- /meta -->
 <link rel="stylesheet" href="../assets/style.css?v=1">
 <script>
@@ -43,7 +43,7 @@
       <span class="badge-ai">ai|</span>
       <span class="sub-brand">math-core</span>
     </a>
-    <div class="three" aria-hidden="true">инструменты · <span class="topic">Математика</span> · практика · 150 вопросов</div>
+    <div class="three" aria-hidden="true">идеи · <span class="topic">Математика</span> · доказательства · 150 вопросов</div>
   </div>
   <div class="utility-tray" role="toolbar" aria-label="Настройки отображения и язык">
     <nav class="lang-switcher" aria-label="Язык страницы">
@@ -67,21 +67,21 @@
 
   <nav class="contents" aria-label="Разделы сайта">
     <ol>
-      <li><a href="01.html"><span class="num">1</span>Раздел 1</a></li>
-      <li><a href="02.html"><span class="num">2</span>Раздел 2</a></li>
-      <li><a href="03.html"><span class="num">3</span>Раздел 3</a></li>
-      <li><a href="04.html"><span class="num">4</span>Раздел 4</a></li>
-      <li><a href="05.html"><span class="num">5</span>Раздел 5</a></li>
-      <li><a href="06.html"><span class="num">6</span>Раздел 6</a></li>
-      <li><a href="07.html"><span class="num">7</span>Раздел 7</a></li>
-      <li><a href="08.html" aria-current="page"><span class="num">8</span>Раздел 8</a></li>
-      <li><a href="09.html"><span class="num">9</span>Раздел 9</a></li>
-      <li><a href="10.html"><span class="num">10</span>Раздел 10</a></li>
-      <li><a href="11.html"><span class="num">11</span>Раздел 11</a></li>
-      <li><a href="12.html"><span class="num">12</span>Раздел 12</a></li>
-      <li><a href="13.html"><span class="num">13</span>Раздел 13</a></li>
-      <li><a href="14.html"><span class="num">14</span>Раздел 14</a></li>
-      <li><a href="15.html"><span class="num">15</span>Раздел 15</a></li>
+      <li><a href="01.html"><span class="num">1</span>Язык и логика</a></li>
+      <li><a href="02.html"><span class="num">2</span>Число</a></li>
+      <li><a href="03.html"><span class="num">3</span>Дискретное</a></li>
+      <li><a href="04.html"><span class="num">4</span>Алгебра</a></li>
+      <li><a href="05.html"><span class="num">5</span>Линейная алгебра</a></li>
+      <li><a href="06.html"><span class="num">6</span>Анализ</a></li>
+      <li><a href="07.html"><span class="num">7</span>Много переменных</a></li>
+      <li><a href="08.html" aria-current="page"><span class="num">8</span>Случайность</a></li>
+      <li><a href="09.html"><span class="num">9</span>Границы</a></li>
+      <li><a href="10.html"><span class="num">10</span>Примеры · Noob</a></li>
+      <li><a href="11.html"><span class="num">11</span>Примеры · Pro</a></li>
+      <li><a href="12.html"><span class="num">12</span>Примеры · IGL</a></li>
+      <li><a href="13.html"><span class="num">13</span>Вопросы · Noob</a></li>
+      <li><a href="14.html"><span class="num">14</span>Вопросы · Pro</a></li>
+      <li><a href="15.html"><span class="num">15</span>Вопросы · IGL</a></li>
     </ol>
     <div class="nav-extra">
       <div><a href="navigator.html"><svg class="icon" data-icon="target" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="7.4"/><circle cx="10" cy="10" r="3.6"/><circle cx="10" cy="10" r="0.7" fill="currentColor"/></svg> Навигатор</a></div>
@@ -93,28 +93,154 @@
   </nav>
 
   <main id="main">
-    <h1>Раздел 8</h1>
-    <p class="page-size" data-words="48">Слов: 48</p>
-    <p class="lead">Лид страницы: о чём она и кому нужна. Одно предложение, не длиннее 160 знаков.</p>
+    <h1>Случайность: мера, распределение, вывод</h1>
+    <p class="page-size" data-words="1554">Слов: 1554</p>
+    <p class="lead">Что мы вправе утверждать, видя конечную выборку, и почему интуиция о вероятности ошибается чаще, чем в любой другой области.</p>
 
     <div class="box key" id="key-idea">
       <h2>Главная мысль страницы <a class="anchor-link" href="#key-idea" aria-label="ссылка на этот блок">#</a></h2>
-      <p>Текст этого раздела ещё не написан.</p>
+      <p><span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">Вероятность - это мера</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Мера</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Способ приписать множествам числа так, чтобы они складывались при объединении непересекающихся частей.</span><span class="term-links"><a href="glossary.html#term-measure">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span>, то есть способ приписать множествам числа так, чтобы они складывались при объединении непересекающихся частей. Ровно те же правила у площади и у массы; отличие одно - полная мера равна единице. Такое определение выглядит скучным и именно поэтому работает: оно не ссылается на «случайность» как на свойство мира, а задаёт правила счёта, которые проверяемы.</p>
+      <p>Вторая половина темы - вывод. Теория вероятностей отвечает на вопрос «что будет, если модель такова»; статистика решает обратную задачу: «какова модель, если мы видели вот это». Обратная задача принципиально труднее и допускает ошибку в обе стороны, и большинство публичных споров о числах - это споры о цене этих двух ошибок, а не о самом счёте.</p>
     </div>
 
-    <h2 id="first">1 · Раздел 1 <a class="anchor-link" href="#first">#</a></h2>
-    <p>Текст этого раздела ещё не написан.</p>
+    <h2 id="measure">1 · Вероятность как мера <a class="anchor-link" href="#measure">#</a></h2>
+
+    <p>Задать вероятностное пространство означает назвать три вещи: множество исходов, набор событий, которым приписываются числа, и саму меру. Третий пункт и есть главный, потому что для бесконечных множеств приписать меру всем подмножествам невозможно без противоречий: существуют неизмеримые множества, и их существование доказывается через аксиому выбора.</p>
+
+    <p>Для конечных задач вся эта техника свёртывается в счёт из темы 03: вероятность есть отношение числа благоприятных исходов к числу всех, если исходы равновозможны. Оговорка про равновозможность - главный источник ошибок, потому что её обычно не проверяют.</p>
+
+    <pre><code data-run="py">from math import comb
+
+ways = comb(52, 5)
+flush = 4 * comb(13, 5)
+print(ways, flush, round(flush / ways * 100, 4))
+# =&gt; 2598960 5148 0.1981</code></pre>
+
+    <div class="prints"><strong>Что спрашивают:</strong> «Орёл выпал пять раз подряд, что вероятнее на шестом?» Ровно то же самое, одна вторая. Монета не помнит прошлого, и ожидание «выравнивания» называется ошибкой игрока. Закон больших чисел обещает устойчивость доли, а не компенсацию прошлых отклонений, и разница между этими двумя утверждениями стоит игрокам состояний.</div>
+
+    <h2 id="bayes">2 · Условная вероятность и формула Байеса <a class="anchor-link" href="#bayes">#</a></h2>
+
+    <div class="math-block" data-tex="P(A \mid B) = \frac{P(B \mid A)\, P(A)}{P(B)}"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo stretchy="false">&#x00028;</mo><mi>A</mi><mo>&#x02223;</mo><mi>B</mi><mo stretchy="false">&#x00029;</mo><mo>&#x0003D;</mo><mfrac><mrow><mi>P</mi><mo stretchy="false">&#x00028;</mo><mi>B</mi><mo>&#x02223;</mo><mi>A</mi><mo stretchy="false">&#x00029;</mo><mspace width="0.167em" /><mi>P</mi><mo stretchy="false">&#x00028;</mo><mi>A</mi><mo stretchy="false">&#x00029;</mo></mrow><mrow><mi>P</mi><mo stretchy="false">&#x00028;</mo><mi>B</mi><mo stretchy="false">&#x00029;</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">P(A \mid B) = \frac{P(B \mid A)\, P(A)}{P(B)}</annotation></semantics></math></div>
+
+    <p><span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">Формула переворачивает условие</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Формула Байеса</strong><span class="area-tag" data-area="ai">для ИИ</span><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Правило пересчёта вероятности гипотезы после наблюдения.</span><span class="term-links"><a href="glossary.html#term-bayes">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span>, и именно это нужно в жизни: тест даёт положительный результат, а знать хочется не вероятность положительного теста при болезни, а вероятность болезни при положительном тесте. Эти два числа различаются в десятки раз, и их смешение называется ошибкой базовой ставки.</p>
+
+    <pre><code data-run="py">p_ill = 0.001
+sens, spec = 0.99, 0.99
+p_pos = sens * p_ill + (1 - spec) * (1 - p_ill)
+print(round(sens * p_ill / p_pos, 4))
+# =&gt; 0.0902</code></pre>
+
+    <p>Тест с точностью девяносто девять процентов при редкой болезни даёт меньше десяти процентов вероятности болезни после положительного ответа. Причина арифметическая: здоровых в тысячу раз больше, поэтому их один процент ложных срабатываний перевешивает почти всех настоящих больных. Это самый практичный результат всей темы.</p>
+
+    <div class="prints"><strong>Что спрашивают:</strong> «Как исправить такой тест?» Повторить его независимым методом. Второй положительный результат умножает шансы ещё раз, и вероятность поднимается до девяноста процентов. Именно поэтому скрининг и подтверждающая диагностика - разные процедуры с разными требованиями.</div>
+
+    <h2 id="variables">3 · Случайная величина, среднее, разброс <a class="anchor-link" href="#variables">#</a></h2>
+
+    <p>Случайная величина - это функция на множестве исходов. Математическое ожидание - среднее её значение, взвешенное вероятностями; дисперсия - средний квадрат отклонения от среднего, а её корень называется стандартным отклонением и измеряется в тех же единицах, что сама величина.</p>
+
+    <p>Главное свойство ожидания - линейность: ожидание суммы равно сумме ожиданий независимо от того, зависимы слагаемые или нет. Это редкий случай, когда зависимость не мешает, и на нём стоят самые красивые решения комбинаторных задач.</p>
+
+    <pre><code data-run="py">faces = range(1, 7)
+mean = sum(faces) / 6
+var = sum((x - mean) ** 2 for x in faces) / 6
+print(mean, round(var, 4), round(var ** 0.5, 4))
+# =&gt; 3.5 2.9167 1.7078</code></pre>
+
+    <div class="prints"><strong>Что спрашивают:</strong> «Дисперсия суммы равна сумме дисперсий?» Только для независимых величин. В общем случае добавляется удвоенная ковариация, и именно она описывает совместное движение: на ней стоит вся портфельная теория, где снижение риска достигается подбором слабо связанных активов.</div>
+
+    <div class="box">
+      <svg role="img" aria-label="Столбики распределения суммы двух кубиков образуют симметричную горку с вершиной на семёрке, а пунктир показывает форму колокола, к которой стремятся суммы." viewBox="0 0 320 170" width="100%" style="max-width:320px;height:auto;display:block;margin:0 auto" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="22" y="124" width="18" height="6" fill="currentColor" fill-opacity="0.12"/>
+        <rect x="44" y="118" width="18" height="12" fill="currentColor" fill-opacity="0.12"/>
+        <rect x="66" y="110" width="18" height="20" fill="currentColor" fill-opacity="0.12"/>
+        <rect x="88" y="102" width="18" height="28" fill="currentColor" fill-opacity="0.12"/>
+        <rect x="110" y="94" width="18" height="36" fill="currentColor" fill-opacity="0.12"/>
+        <rect x="132" y="86" width="18" height="44" fill="currentColor" fill-opacity="0.12"/>
+        <rect x="154" y="78" width="18" height="52" fill="currentColor" fill-opacity="0.12"/>
+        <rect x="176" y="86" width="18" height="44" fill="currentColor" fill-opacity="0.12"/>
+        <rect x="198" y="94" width="18" height="36" fill="currentColor" fill-opacity="0.12"/>
+        <rect x="220" y="102" width="18" height="28" fill="currentColor" fill-opacity="0.12"/>
+        <rect x="242" y="110" width="18" height="20" fill="currentColor" fill-opacity="0.12"/>
+        <rect x="264" y="118" width="18" height="12" fill="currentColor" fill-opacity="0.12"/>
+        <rect x="286" y="124" width="18" height="6" fill="currentColor" fill-opacity="0.12"/>
+        <path d="M14 130 L306 130"/>
+        <path d="M31 124 Q53 120 75 110 Q97 98 119 86 Q141 76 163 72 Q185 76 207 86 Q229 98 251 110 Q273 120 295 124" stroke-dasharray="5 3"/>
+        <text x="31" y="150" font-size="13" fill="currentColor" stroke="none" text-anchor="middle">2</text>
+        <text x="141" y="150" font-size="13" fill="currentColor" stroke="none" text-anchor="middle">7</text>
+        <text x="295" y="150" font-size="13" fill="currentColor" stroke="none" text-anchor="end">12</text>
+      </svg>
+      <p class="dim">Схема 15. Сумма уже двух кубиков перестаёт быть равномерной, а сумма двенадцати почти неотличима от колокола: это центральная предельная теорема в одной картинке.</p>
+    </div>
+
+    <h2 id="lln">4 · Закон больших чисел <a class="anchor-link" href="#lln">#</a></h2>
+
+    <p><span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">Среднее большого числа независимых</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Закон больших чисел</strong><span class="area-tag" data-area="ai">для ИИ</span><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Утверждение о том, что среднее независимых одинаково распределённых величин приближается к математическому ожиданию.</span><span class="term-links"><a href="glossary.html#term-lln">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span> одинаково распределённых величин приближается к математическому ожиданию. Это утверждение о сходимости, и его точная формулировка требует кванторов из темы 01: оно говорит, что отклонение больше любой заданной величины становится сколь угодно маловероятным.</p>
+
+    <pre><code data-run="py">import random
+
+random.seed(20261024)
+tosses = [random.random() &lt; 0.5 for _ in range(10 ** 6)]
+share = sum(tosses) / len(tosses)
+print(round(share, 4), abs(share - 0.5) &lt; 0.002)
+# =&gt; 0.5004 True</code></pre>
+
+    <p>Зерно генератора задано явно, поэтому счёт воспроизводим: у вас получится то же число. Это обязательное условие для любого численного эксперимента со случайностью, иначе проверить результат невозможно, и проверка превращается в веру.</p>
+
+    <div class="prints"><strong>Что спрашивают:</strong> «Сколько нужно опытов?» Отклонение убывает как корень из числа опытов, поэтому для вдвое лучшей точности нужно вчетверо больше работы. Это главный практический вывод темы и причина, по которой метод Монте-Карло не любят за точность и любят за устойчивость к размерности.</div>
+
+    <h2 id="clt">5 · Центральная предельная теорема <a class="anchor-link" href="#clt">#</a></h2>
+
+    <p><span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">Сумма большого числа независимых слагаемых</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Центральная предельная теорема</strong><span class="area-tag" data-area="ai">для ИИ</span><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Утверждение о том, что сумма многих независимых слагаемых с конечной дисперсией распределена приближённо нормально.</span><span class="term-links"><a href="glossary.html#term-clt">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span>, ни одно из которых не доминирует, распределена примерно нормально - независимо от того, как распределены сами слагаемые. Это объясняет, почему колокол встречается всюду, и одновременно объясняет, где он не встречается: там, где слагаемые зависимы или где одно из них перевешивает остальные.</p>
+
+    <pre><code data-run="py">import random
+
+random.seed(7)
+sums = [sum(random.randint(1, 6) for _ in range(12)) for _ in range(200000)]
+mean = sum(sums) / len(sums)
+inside = sum(1 for s in sums if abs(s - 42) &lt;= 6) / len(sums)
+print(round(mean, 3), round(inside, 3))
+# =&gt; 41.983 0.725</code></pre>
+
+    <p>Сумма двенадцати кубиков имеет среднее сорок два, и в пределах шести от него оказалось 72,5 процента значений. Проверим это теорией, а не на глаз: дисперсия одного кубика равна 2,9167 из третьего раздела, у суммы двенадцати независимых она в двенадцать раз больше, то есть стандартное отклонение равно примерно 5,92. Шесть - это чуть больше одного отклонения, а для нормального распределения в одно отклонение попадает 68 процентов. Остаток разницы объясняется тем, что сумма целочисленна: границы честнее брать с поправкой на половину деления, то есть 6,5, и тогда теория даёт около 73 процентов. Совпало.</p>
+    <p>Распределение одного кубика равномерно и на колокол не похоже совершенно; колокол появился исключительно от суммирования, и в этом всё содержание теоремы.</p>
+
+    <div class="prints"><strong>Что спрашивают:</strong> «Где теорема не работает?» Там, где дисперсия бесконечна: распределение Коши не подчиняется ни закону больших чисел, ни центральной предельной теореме, и среднее по выборке у него не устойчиво вовсе. Такие распределения встречаются в финансах, и игнорирование этого обошлось дорого не одному фонду.</div>
+
+    <h2 id="inference">6 · Статистический вывод и его цена <a class="anchor-link" href="#inference">#</a></h2>
+
+    <p>Проверка гипотезы устроена как доказательство от противного из темы 01, только с вероятностями: предполагаем, что эффекта нет, считаем вероятность увидеть такие данные при этом предположении, и если она мала, предположение отвергаем. Эта вероятность и называется <span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">уровнем значимости</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Уровень значимости</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Вероятность получить такие данные, если эффекта нет; не вероятность того, что эффекта нет.</span><span class="term-links"><a href="glossary.html#term-significance">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span>.</p>
+
+    <p>Ловушка в том, что малая вероятность данных при отсутствии эффекта - не то же самое, что малая вероятность отсутствия эффекта при данных. Это ровно перестановка условия из второго раздела, и формула Байеса показывает, что без априорной вероятности вывод невозможен. Отсюда же множественные сравнения: проверив двадцать гипотез на уровне пяти процентов, вы ожидаете одно ложное открытие даже при полном отсутствии эффектов.</p>
+
+    <h2 id="neighbours">7 · Соседи: теория игр и прикладная статистика <a class="anchor-link" href="#neighbours">#</a></h2>
+
+    <p>Две области стоят на том же основании, что эта глава, и в карту предмета не входят. Обе - не разделы математики, а самостоятельные предметы со своей культурой, своими задачами и своим читателем, и честнее назвать их здесь, чем сделать вид, что их нет.</p>
+
+    <p><strong>Теория игр</strong> начинается там, где вероятность встречает второго участника. В задаче о кубике исход случаен и никому не выгоден; в задаче о двух фирмах, назначающих цену, исход зависит от решения другого, и этот другой тоже считает. Отсюда понятие равновесия: набор решений, от которого ни одному участнику не выгодно отклониться в одиночку. Математики там немного и она знакомая - матрицы из темы 05, ожидание из этой главы, выпуклость из темы 07, - а содержания столько, что оно не умещается ни в один раздел: кооперативные и некооперативные игры, повторяющиеся игры и репутация, аукционы, механизмы распределения. Дилемма заключённого, самый известный пример области, целиком помещается в таблицу два на два и объясняет поведение фирм, государств и соседей по подъезду.</p>
+
+    <p><strong>Прикладная статистика</strong> - это обратная задача к тому, чем занималась эта глава. Теория вероятностей отвечает на вопрос «что будет, если модель такова»; статистика спрашивает «какова модель, если мы видели вот это», и у обратной задачи нет единственного ответа. Отсюда её устройство: оценки и их свойства, доверительные интервалы, проверка гипотез, регрессия, планирование эксперимента и работа с пропущенными данными. Отсюда же её главная трудность, которую видно по шестому разделу: арифметика там простая, а ошибки - содержательные, и почти все происходят на границе между данными и выводом.</p>
+
+    <p>Обе области - кандидаты на отдельные сайты этой же серии, и причина одна и та же: материал не умещается в шесть-девять разделов, а значит внутри сидит самостоятельный курс, а не глава. На этом сайте они названы, чтобы читатель знал, где кончается карта и что лежит за её краем.</p>
+
+    <div class="prints"><strong>Что спрашивают:</strong> «Равновесие - это оптимум?» Нет, и дилемма заключённого именно об этом: равновесие устойчиво, но хуже для обоих участников, чем недостижимое в одиночку сотрудничество. Смешение устойчивости с оптимальностью - самая частая ошибка в разговорах о стимулах.</div>
 
     <div class="box key" id="artifacts">
       <h2>Артефакты: что у вас есть после этой страницы <a class="anchor-link" href="#artifacts">#</a></h2>
-      <p>Текст этого раздела ещё не написан.</p>
+      <ul>
+        <li>Вероятность как мера и понимание, откуда берётся требование равновозможности.</li>
+        <li>Формула Байеса и посчитанный пример, где точный на девяносто девять процентов тест даёт девять процентов уверенности.</li>
+        <li>Закон больших чисел, проверенный воспроизводимым экспериментом с заданным зерном.</li>
+        <li>Центральная предельная теорема и два места, где она отказывает.</li>
+        <li>Логика проверки гипотез и причина, по которой уровень значимости не является вероятностью ошибки.</li>
+        <li>Границы этой главы: где начинаются теория игр и прикладная статистика и почему каждая из них - отдельный курс.</li>
+      </ul>
     </div>
   
 
     <footer>
       <nav class="pager" aria-label="Соседние темы">
-        <p class="pager-next">Следующая тема: <a href="09.html">Раздел 9</a></p>
-        <p class="pager-prev">Предыдущая тема: <a href="07.html">Раздел 7</a></p>
+        <p class="pager-next">Следующая тема: <a href="09.html">Границы математики: топология, вычислимость, неполнота</a></p>
+        <p class="pager-prev">Предыдущая тема: <a href="07.html">Много переменных и уравнения движения</a></p>
       </nav>
       <p class="footer-note">Сайт серии AI Factory. Сделан той же оснасткой, что и остальные: обычный HTML и CSS, проверка на bash, публикация через GitHub Pages.</p>
     </footer>

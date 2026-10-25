@@ -16,6 +16,7 @@
 #     python3 tools/build-search.py       пересобрать индекс поиска
 #     python3 tools/build-meta.py         голова страницы, объём в словах, соседние темы, карта сайта
 #     node tools/check-pages.mjs          телефон 390px и липкая панель, все страницы
+#     python3 tools/build-math.py --check  формулы: напечатаны и совпадают с источником
 #     node tools/check-diagrams.mjs       схемы: холст, подписи, исходники, перевод
 #     python3 tools/check-navigator.py    девять линз и выход из каждой
 #     node tools/shot.mjs ru/01.html       снимок одной страницы, чтобы посмотреть глазами
@@ -59,6 +60,7 @@ run "пунктуация"          python3 tools/check-text.py
 run "индекс поиска"        python3 tools/build-search.py --check
 run "данные страниц"       python3 tools/build-meta.py --check
 run "телефон и панель"     node tools/check-pages.mjs
+run "формулы"             python3 tools/build-math.py --check
 run "схемы страниц"        node tools/check-diagrams.mjs
 run "линзы навигатора"     python3 tools/check-navigator.py
 run "перевод и заглушки"  python3 tools/check-struct.py

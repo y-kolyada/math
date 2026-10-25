@@ -190,7 +190,7 @@ for (const lang of Object.keys(seen)) {
 console.log();
 console.log('  Проверка схем: холст, подписи, исходники, перевод');
 console.log('  ' + '-'.repeat(46));
-console.log('  схем проверено: ' + total);
+console.log('  схем проверено: ' + drawn + ' на ' + total + (total === 1 ? ' странице' : ' страницах'));
 console.log('  в браке:        ' + bad.length);
 for (const [where, why] of bad.slice(0, 20)) console.log('        -> ' + where + ': ' + why);
 if (bad.length > 20) console.log('        -> ... и ещё ' + (bad.length - 20));
