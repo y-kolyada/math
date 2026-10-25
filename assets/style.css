@@ -510,6 +510,42 @@ mark.search-mark {
   border-color: var(--term-accent);
 }
 .search-facet[aria-pressed="false"] { opacity: .55; }
+
+/* The one click that says «the subject» or «the whole site». It wears the
+   same shape as the clear button beside it, because it does the same kind of
+   thing: it resets a choice rather than making one. */
+.search-only {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 26px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--dim);
+  cursor: pointer;
+}
+.search-only[aria-pressed="true"] {
+  color: var(--term-accent);
+  background: var(--target-bg);
+  border-color: var(--target-line);
+}
+.search-only:hover,
+.search-only:focus-visible {
+  color: var(--fg);
+  background: var(--term-bg-hover);
+  border-color: var(--term-accent);
+}
+
+/* How many were found, not how many fit: forty is the ceiling of the list. */
+.search-count {
+  margin: 0;
+  padding: 8px 14px 0;
+  color: var(--dim);
+  font-size: .78rem;
+}
+.search-count[hidden] { display: none; }
 .search-facet:hover { border-color: var(--term-accent); }
 
 /* --- chips: a list of links that a comma cannot separate ---
@@ -554,6 +590,15 @@ mark.search-mark {
   color: var(--dim);
   font-size: .8rem;
   margin: 2px 0;
+}
+/* The page a result came from is the tie back to the upper level, and it was
+   the palest thing in the row. The amber ground is the one the glossary uses
+   for the same job; the box stays the height of its own line. */
+.search-page {
+  padding: 0 6px;
+  background: var(--term-bg-hover);
+  border-radius: 5px;
+  color: var(--fg);
 }
 .search-snip {
   display: block;
