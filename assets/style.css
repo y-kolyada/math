@@ -483,6 +483,49 @@ mark.search-mark {
   padding: 2px 6px;
 }
 .search-close:hover { color: var(--fg); }
+/* --- facets: the second axis of a search, after the words themselves ---
+   The row says what the index holds, not what the site declares: the kind of
+   a page is read from its name by tools/build-search.py, so a site without a
+   question bank never sees a switch with nothing behind it. One kind means
+   nothing to choose between, and then the row is not drawn at all. */
+.search-facets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 14px 0;
+}
+.search-facet {
+  padding: 3px 10px;
+  font: inherit;
+  font-size: .8rem;
+  line-height: 1.6;
+  color: var(--fg);
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.search-facet[aria-pressed="true"] {
+  background: var(--term-bg-hover);
+  border-color: var(--term-accent);
+}
+.search-facet[aria-pressed="false"] { opacity: .55; }
+.search-facet:hover { border-color: var(--term-accent); }
+
+/* --- chips: a list of links that a comma cannot separate ---
+   «05 · Линейная алгебра» already holds an interpunct, so a comma between
+   two such links merges the line into one sentence. The separator here is
+   not a glyph but a shape. */
+.chips a {
+  display: inline-block;
+  padding: 1px 9px;
+  margin: 2px 2px 2px 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  text-decoration: none;
+}
+.chips a:hover { border-color: var(--term-accent); background: var(--term-bg-hover); }
+
 .search-results {
   list-style: none;
   margin: 0;

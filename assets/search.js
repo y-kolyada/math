@@ -6,19 +6,23 @@
     ru: { place: 'Искать по разделам, словарю и вопросам', none: 'Ничего не найдено',
           empty: 'Для этого языка содержание ещё не переведено', close: 'Закрыть поиск',
           clear: 'Очистить строку поиска',
-          hint: 'Esc - закрыть, стрелки - выбор, Enter - перейти' },
+          hint: 'Esc - закрыть, стрелки - выбор, Enter - перейти' ,
+          kinds: { t: 'Темы', e: 'Примеры', q: 'Вопросы', n: 'Навигатор', g: 'Словарь', i: 'Витрина' } },
     en: { place: 'Search sections, glossary, and questions', none: 'Nothing found',
           empty: 'This language has no content yet', close: 'Close search',
           clear: 'Clear search query',
-          hint: 'Esc to close, arrows to move, Enter to open' },
+          hint: 'Esc to close, arrows to move, Enter to open' ,
+          kinds: { t: 'Topics', e: 'Examples', q: 'Questions', n: 'Navigator', g: 'Glossary', i: 'Landing' } },
     uk: { place: 'Шукати в розділах, словнику й питаннях', none: 'Нічого не знайдено',
           empty: 'Для цієї мови зміст ще не перекладено', close: 'Закрити пошук',
           clear: 'Очистити рядок пошуку',
-          hint: 'Esc - закрити, стрілки - вибір, Enter - перейти' },
+          hint: 'Esc - закрити, стрілки - вибір, Enter - перейти' ,
+          kinds: { t: 'Теми', e: 'Приклади', q: 'Питання', n: 'Навігатор', g: 'Словник', i: 'Вітрина' } },
     de: { place: 'Abschnitte, Glossar und Fragen durchsuchen', none: 'Nichts gefunden',
           empty: 'Für diese Sprache gibt es noch keine Inhalte', close: 'Suche schließen',
           clear: 'Suchfeld leeren',
-          hint: 'Esc schließt, Pfeile wählen, Enter öffnet' },
+          hint: 'Esc schließt, Pfeile wählen, Enter öffnet' ,
+          kinds: { t: 'Themen', e: 'Beispiele', q: 'Fragen', n: 'Navigator', g: 'Glossar', i: 'Startseite' } },
   };
 
   const lang = document.documentElement.lang || 'ru';
@@ -30,7 +34,14 @@
   // ё and е are one letter for a reader looking for a word.
   const norm = (s) => s.toLowerCase().replace(/ё/g, 'е');
   const items = raw.map((e) => ({ url: e[0], title: e[1], page: e[2], body: e[3],
-    t: norm(e[1]), b: norm(e[3]) }));
+    kind: e[4] || 't', t: norm(e[1]), b: norm(e[3]) }));
+
+  // Виды страниц, которые в этом индексе вообще есть. Один вид - отбирать
+  // не из чего, и ряда переключателей не появляется вовсе: на языке, где
+  // переведена только витрина, он был бы одной кнопкой «Витрина».
+  const kinds = ((window.SEARCH && window.SEARCH.k) || []).filter((k) => say.kinds[k]);
+  const faceted = kinds.length > 1;
+  const off = new Set();
 
   const panel = document.createElement('div');
   panel.className = 'search-panel';
@@ -47,12 +58,17 @@
     + '<span class="search-lang">' + lang.toUpperCase() + '</span>'
     + '<button type="button" class="search-close" aria-label="' + say.close + '">&times;</button>'
     + '</div>'
+    + (faceted ? '<div class="search-facets" role="group">'
+        + kinds.map((k) => '<button type="button" class="search-facet" data-kind="' + k
+          + '" aria-pressed="true">' + say.kinds[k] + '</button>').join('')
+        + '</div>' : '')
     + '<ul class="search-results"></ul>'
     + '<div class="search-hint">' + say.hint + '</div>'
     + '</div>';
   document.body.appendChild(panel);
 
   const input = panel.querySelector('.search-input');
+  const facets = [...panel.querySelectorAll('.search-facet')];
   const clearBtn = panel.querySelector('.search-clear');
   const list = panel.querySelector('.search-results');
   let picked = -1;
@@ -63,11 +79,28 @@
       input.value = saved.q;
       picked = typeof saved.idx === 'number' ? saved.idx : -1;
     }
+    if (saved && Array.isArray(saved.off)) {
+      saved.off.forEach((k) => off.add(k));
+      facets.forEach((b) => b.setAttribute('aria-pressed', String(!off.has(b.dataset.kind))));
+    }
   } catch (_) {}
+
+  // Выключить все виды - то же, что не искать вовсе, поэтому последний
+  // включённый не выключается: пустая выдача без причины читается как
+  // поломка поиска, а не как собственный выбор.
+  facets.forEach((btn) => btn.addEventListener('click', () => {
+    const k = btn.dataset.kind;
+    if (off.has(k)) off.delete(k);
+    else if (off.size < kinds.length - 1) off.add(k);
+    else return;
+    btn.setAttribute('aria-pressed', String(!off.has(k)));
+    render(input.value, false);
+    saveState(picked, '', false);
+  }));
 
   function saveState(idx, url, active) {
     try {
-      if (!input.value.trim()) {
+      if (!input.value.trim() && !off.size) {
         sessionStorage.removeItem(key('search'));
         return;
       }
@@ -76,6 +109,7 @@
         idx,
         url: url || '',
         active: Boolean(active),
+        off: [...off],
       }));
     } catch (_) {}
   }
@@ -92,6 +126,7 @@
     if (needle.length < 2) return [];
     const hits = [];
     for (const entry of items) {
+      if (off.has(entry.kind)) continue;
       const inTitle = entry.t.indexOf(needle);
       const inBody = inTitle < 0 ? entry.b.indexOf(needle) : -1;
       if (inTitle < 0 && inBody < 0) continue;
