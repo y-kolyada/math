@@ -639,17 +639,20 @@ body { padding-bottom: 72px; }
   border-color: var(--line) transparent transparent transparent;
 }
 .term-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
+  display: block;
+  padding-right: 36px; /* gutter for the close button: nothing flows into it */
   margin-bottom: 6px;
 }
 .term-title {
-  display: inline-block;
+  display: inline;
   font-weight: 600;
   color: var(--fg);
 }
 .term-close {
+  position: absolute;
+  top: -2px;
+  right: -4px;
   background: none;
   border: none;
   font-size: 1.2rem;
@@ -702,9 +705,6 @@ body { padding-bottom: 72px; }
   border-radius: 999px;
   vertical-align: middle;
   white-space: nowrap;
-}
-.term-header .area-tag {
-  margin-right: auto;
 }
 
 @media (max-width: 640px) {
