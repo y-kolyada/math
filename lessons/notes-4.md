@@ -35,3 +35,24 @@
 Выигрыш в том, что задача меняет род: вместо «согласуются ли два текста» получается «говорит ли этот `span` число пятнадцать», а это поиск одного известного значения, а не выравнивание предложений. Таблица числительных для чтения одного значения нужна та же и уже написана в опыте выше. Ложных срабатываний нет по устройству: сверяется ровно то, что объявлено счётом, и красное называет ожидаемое число.
 
 Пока этого нет, число на витрине стережёт строка `tools/claims.tsv` - и только на русской странице.
+
+## Finding 17 - the counter exposed a limit it cannot lift
+
+**What.** The search shows `Найдено: 57, показаны первые 40`. The number is true and the reader
+now knows seventeen results exist that no interaction can reach: there is no pagination, and the
+cap of 40 lives in `find()` in `assets/search.js`.
+
+**Why it is a defect and not a limitation.** Before the counter, the cap was invisible: a reader
+saw forty rows and assumed that was all. The counter made the cap honest and, in the same move,
+made it frustrating. A number a reader cannot act on is worse than no number.
+
+**Found by.** The Conductor, reading the panel on a live site, 25.10.2026. No check sees it:
+every check we have confirms the index and the markup, and none asks whether the reader can
+reach what the page admits exists.
+
+**The proposal.** Make the count line the control: `Найдено: 57, показаны первые 40 · показать ещё`.
+One piece of state (`limit`, starting at 40, growing by 40), `find()` slicing to it, and the tail
+of the line rendered as a button when `total > limit`. The facets stay the primary answer - a
+reader who narrows by kind usually drops under the cap - but a common word still needs this.
+
+**Not done now.** Battery. The engine is the seed's, so the fix is born in the seed and synced.
