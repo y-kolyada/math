@@ -162,7 +162,9 @@
 
   function find(query) {
     const needle = norm(query.trim());
-    if (needle.length < 2) return [];
+    // Пустой и односимвольный запрос тоже возвращает форму {total, shown}: раньше здесь
+    // стоял пустой массив, и render падал на got.shown.length при каждом открытии окна.
+    if (needle.length < 2) return { total: 0, shown: [] };
     const hits = [];
     for (const entry of items) {
       if (off.has(entry.kind)) continue;
