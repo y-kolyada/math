@@ -525,6 +525,10 @@ mark.search-mark {
   text-decoration: none;
 }
 .chips a:hover { border-color: var(--term-accent); background: var(--term-bg-hover); }
+/* Each label starts its own line, or the second one sticks to the last chip
+   of the first group and the two lists read as one. */
+.chips strong { display: block; }
+.chips strong:not(:first-child) { margin-top: 10px; }
 
 .search-results {
   list-style: none;
