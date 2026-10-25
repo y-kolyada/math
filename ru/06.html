@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Предел и непрерывность: анализ одной переменной · math-core · ai|</title>
 <!-- meta: built by tools/build-meta.py - do not edit by hand -->
-<meta name="description" content="Где впервые нужна полнота: предел, непрерывность, производная, интеграл и ряд - пять понятий, выросших из одного определения.">
+<meta name="description" content="Где впервые нужна полнота: предел, непрерывность, производная, интеграл, ряд и пара функций, с которой геометрия стала числом.">
 <link rel="canonical" href="https://y-kolyada.github.io/math/ru/06.html">
 <link rel="alternate" hreflang="ru" href="https://y-kolyada.github.io/math/ru/06.html">
 <link rel="alternate" hreflang="en" href="https://y-kolyada.github.io/math/en/06.html">
@@ -15,12 +15,12 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="math-core">
 <meta property="og:title" content="Предел и непрерывность: анализ одной переменной">
-<meta property="og:description" content="Где впервые нужна полнота: предел, непрерывность, производная, интеграл и ряд - пять понятий, выросших из одного определения.">
+<meta property="og:description" content="Где впервые нужна полнота: предел, непрерывность, производная, интеграл, ряд и пара функций, с которой геометрия стала числом.">
 <meta property="og:url" content="https://y-kolyada.github.io/math/ru/06.html">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Предел и непрерывность: анализ одной переменной","description":"Где впервые нужна полнота: предел, непрерывность, производная, интеграл и ряд - пять понятий, выросших из одного определения.","url":"https://y-kolyada.github.io/math/ru/06.html","inLanguage":"ru","isPartOf":{"@type":"WebSite","name":"math-core","url":"https://y-kolyada.github.io/math/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Предел и непрерывность: анализ одной переменной","description":"Где впервые нужна полнота: предел, непрерывность, производная, интеграл, ряд и пара функций, с которой геометрия стала числом.","url":"https://y-kolyada.github.io/math/ru/06.html","inLanguage":"ru","isPartOf":{"@type":"WebSite","name":"math-core","url":"https://y-kolyada.github.io/math/"}}</script>
 <!-- /meta -->
 <link rel="stylesheet" href="../assets/style.css?v=1">
 <script>
@@ -94,8 +94,8 @@
 
   <main id="main">
     <h1>Предел и непрерывность: анализ одной переменной</h1>
-    <p class="page-size" data-words="1267">Слов: 1267</p>
-    <p class="lead">Где впервые нужна полнота: предел, непрерывность, производная, интеграл и ряд - пять понятий, выросших из одного определения.</p>
+    <p class="page-size" data-words="2669">Слов: 2669</p>
+    <p class="lead">Где впервые нужна полнота: предел, непрерывность, производная, интеграл, ряд и пара функций, с которой геометрия стала числом.</p>
 
     <div class="box key" id="key-idea">
       <h2>Главная мысль страницы <a class="anchor-link" href="#key-idea" aria-label="ссылка на этот блок">#</a></h2>
@@ -142,7 +142,7 @@ print(n, round(seq(n), 9))
         <text x="24" y="60" font-size="13" fill="currentColor" stroke="none" text-anchor="end">a+ε</text>
         <text x="24" y="96" font-size="13" fill="currentColor" stroke="none" text-anchor="end">a−ε</text>
       </svg>
-      <p class="dim">Схема 7. Определение предела целиком: сначала называют точность ε, потом находят номер N, и дальше коридор не покидается.</p>
+      <p class="dim">Схема 8. Определение предела целиком: сначала называют точность ε, потом находят номер N, и дальше коридор не покидается.</p>
     </div>
 
     <h2 id="completeness">2 · Полнота в работе <a class="anchor-link" href="#completeness">#</a></h2>
@@ -205,7 +205,7 @@ print(round(num, 9), round(math.cos(1), 9))
         <text x="10" y="30" font-size="13" fill="currentColor" stroke="none">секущая</text>
         <text x="170" y="132" font-size="13" fill="currentColor" stroke="none">касательная</text>
       </svg>
-      <p class="dim">Схема 8. Производная - это наклон предельного положения секущей: вторая точка приближается к первой, и прямая перестаёт зависеть от неё.</p>
+      <p class="dim">Схема 9. Производная - это наклон предельного положения секущей: вторая точка приближается к первой, и прямая перестаёт зависеть от неё.</p>
     </div>
 
     <h2 id="integral">5 · Интеграл: сумма, у которой взят предел <a class="anchor-link" href="#integral">#</a></h2>
@@ -236,7 +236,7 @@ print(round(s, 6))
         <path d="M42 130 Q170 44 296 34"/>
         <text x="44" y="32" font-size="13" fill="currentColor" stroke="none">f(x)</text>
       </svg>
-      <p class="dim">Схема 9. Интеграл по определению: сумма площадей столбиков, у которой взят предел при стремлении ширины к нулю.</p>
+      <p class="dim">Схема 10. Интеграл по определению: сумма площадей столбиков, у которой взят предел при стремлении ширины к нулю.</p>
     </div>
 
     <h2 id="series">6 · Ряды: когда бесконечная сумма имеет смысл <a class="anchor-link" href="#series">#</a></h2>
@@ -266,8 +266,134 @@ print(round(h, 6), h &gt; 14)
         <text x="10" y="30" font-size="13" fill="currentColor" stroke="none">сходится</text>
         <text x="176" y="132" font-size="13" fill="currentColor" stroke="none">расходится</text>
       </svg>
-      <p class="dim">Схема 10. Убывание слагаемых к нулю необходимо и недостаточно: гармонический ряд ведёт себя как пунктир и уходит выше любой прямой.</p>
+      <p class="dim">Схема 11. Убывание слагаемых к нулю необходимо и недостаточно: гармонический ряд ведёт себя как пунктир и уходит выше любой прямой.</p>
     </div>
+
+    <h2 id="sincos">7 · Синус и косинус: геометрия, ставшая числом <a class="anchor-link" href="#sincos">#</a></h2>
+
+    <p>Отношение двух сторон прямоугольного треугольника зависит только от его углов, а не от размера: у подобных треугольников оно одно и то же. Это наблюдение - первый в истории перевод геометрии в число. Вместо чертежа появилась таблица, вместо построения - счёт. Гиппарх во втором веке до нашей эры и Птолемей три столетия позже составили таблицы хорд с шагом в половину градуса, и это был первый численный метод человечества: по таблице и правилам сложения углов находили то, что на чертеже измерить нельзя - расстояние до недоступной точки, высоту светила, широту места. Полторы тысячи лет морская навигация считала по этим таблицам, и до появления спутников другого способа узнать в открытом море, где ты находишься, у человека не было.</p>
+
+    <p>Современное определение обходится без треугольника вовсе. Возьмите окружность радиуса один с центром в начале координат, встаньте в её правую точку и пройдите по ней против часовой стрелки путь длины t. <span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">Косинусом и синусом</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Синус и косинус</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Две координаты точки, в которую приводит путь длины t по единичной окружности.</span><span class="term-links"><a href="glossary.html#term-sincos">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span> этого числа называются две координаты той точки, куда вы пришли.</p>
+
+    <div class="math-block" data-tex="x = \cos t, \qquad y = \sin t, \qquad \cos^{2} t + \sin^{2} t = 1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>x</mi><mo>&#x0003D;</mo><mi>cos</mi><mi>t</mi><mo>&#x0002C;</mo><mspace width="2em" /><mi>y</mi><mo>&#x0003D;</mo><mi>sin</mi><mi>t</mi><mo>&#x0002C;</mo><mspace width="2em" /><msup><mi>cos</mi><mrow><mn>2</mn></mrow></msup><mi>t</mi><mo>&#x0002B;</mo><msup><mi>sin</mi><mrow><mn>2</mn></mrow></msup><mi>t</mi><mo>&#x0003D;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x = \cos t, \qquad y = \sin t, \qquad \cos^{2} t + \sin^{2} t = 1</annotation></semantics></math></div>
+
+    <p>Основное тождество при таком определении не нужно доказывать: это теорема Пифагора для радиуса, где катеты равны косинусу и синусу, а гипотенуза единице. Ничего нового в нём нет - зато хорошо видно, чего в нём нет. Нет угла в градусах: аргумент здесь длина дуги, то есть обычное число. Синус и косинус оказываются функциями числа, а не фигуры, и именно поэтому им есть место в анализе.</p>
+
+    <div class="box">
+      <svg role="img" aria-label="Единичная окружность с центром в начале координат: путь длины t по ней приводит в точку, у которой первая координата равна косинусу t, а вторая синусу t; пунктиром показаны обе координаты, дугой - сам путь t." viewBox="0 0 320 250" width="100%" style="max-width:320px;height:auto;display:block;margin:0 auto" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M40 130 L296 130"/>
+        <path d="M140 238 L140 28"/>
+        <circle cx="140" cy="130" r="85"/>
+        <path d="M140 130 L192.3 63"/>
+        <path d="M192.3 63 L192.3 130" stroke-dasharray="4 3"/>
+        <path d="M192.3 63 L140 63" stroke-dasharray="4 3"/>
+        <path d="M166 130 A26 26 0 0 0 156 109.5"/>
+        <circle cx="192.3" cy="63" r="3.2" fill="currentColor" stroke="none"/>
+        <path d="M197 59 L209 50"/>
+        <text x="308" y="48" font-size="13" fill="currentColor" stroke="none" text-anchor="end">(cos t, sin t)</text>
+        <text x="200" y="104" font-size="13" fill="currentColor" stroke="none">sin t</text>
+        <text x="166" y="148" font-size="13" fill="currentColor" stroke="none" text-anchor="middle">cos t</text>
+        <text x="169" y="115" font-size="13" fill="currentColor" stroke="none">t</text>
+        <text x="225" y="148" font-size="13" fill="currentColor" stroke="none" text-anchor="middle">1</text>
+      </svg>
+      <p class="dim">Схема 12. Косинус и синус - это не отношения сторон, а две координаты одной точки: путь длины t по единичной окружности задаёт их обе сразу, и теорема Пифагора для радиуса превращается в основное тождество.</p>
+    </div>
+
+    <p>Полный оборот - это длина единичной окружности, то есть два пи; прямой угол - половина пи. Такая мера угла называется <span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">радианом</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Радиан</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Мера угла, равная длине дуги, которую он высекает на окружности радиуса один.</span><span class="term-links"><a href="glossary.html#term-radian">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span>, и её обычно подают как условность, принятую ради удобства формул. Это неверно. Радиан вынужден, и вынуждает его один предел.</p>
+
+    <div class="math-block" data-tex="\lim_{x \to 0} \frac{\sin x}{x} = 1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mo>lim</mo><mrow><mi>x</mi><mo>&#x02192;</mo><mn>0</mn></mrow></msub><mfrac><mrow><mi>sin</mi><mi>x</mi></mrow><mrow><mi>x</mi></mrow></mfrac><mo>&#x0003D;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lim_{x \to 0} \frac{\sin x}{x} = 1</annotation></semantics></math></div>
+
+    <p>Это <span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">первый замечательный предел</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Первый замечательный предел</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Отношение синуса к аргументу стремится к единице при аргументе, стремящемся к нулю.</span><span class="term-links"><a href="glossary.html#term-sinc-limit">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span>, и геометрически он говорит простую вещь: у нуля дуга и её синус неразличимы, кривая сливается с хордой. Но равен он единице ровно тогда, когда дуга измерена той же линейкой, что её синус, - то есть в радианах. Проверка занимает четыре строки.</p>
+
+    <pre><code data-run="py">import math
+for x in (0.1, 0.01, 0.001):
+    print(round(math.sin(x) / x, 9))
+print(round(math.sin(math.radians(0.001)) / 0.001, 9))
+# =&gt; 0.998334166
+# =&gt; 0.999983333
+# =&gt; 0.999999833
+# =&gt; 0.017453293</code></pre>
+
+    <p>Три первых числа идут к единице, добавляя по два верных знака на каждый порядок аргумента. Четвёртое - то же отношение, посчитанное для угла в одну тысячную градуса: вместо единицы вышло 0,0174533, то есть пи, делённое на сто восемьдесят. В этом и состоит цена градуса. Производная синуса в градусной мере равна косинусу, умноженному на 0,0174533, у второй производной множитель возводится в квадрат, и дальше он тянется в каждую формулу анализа, где встречается эта пара. Радиан - единственная мера, при которой множителя нет, и поэтому в анализе другой меры не бывает. Градус остался там, откуда пришёл: в навигации и в геодезии, где считают не производные, а углы.</p>
+
+    <div class="box">
+      <svg role="img" aria-label="Прямая игрек равен икс и кривая игрек равен синусу икс выходят из начала координат вместе: у нуля они неразличимы, а дальше синус отстаёт и выходит на единицу." viewBox="0 0 320 200" width="100%" style="max-width:320px;height:auto;display:block;margin:0 auto" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M40 170 L296 170"/>
+        <path d="M40 178 L40 24"/>
+        <path d="M40 170 L185 25" stroke-dasharray="5 3"/>
+        <path d="M40 170 L54 156 L68 142.2 L82 128.6 L96 115.5 L110 102.9 L124 91 L138 79.8 L152 69.6 L166 60.3 L180 52.2 L194 45.2 L208 39.5 L222 35.1 L236 32 L250 30.4 L264 30.1"/>
+        <rect x="36" y="134" width="54" height="40" fill="currentColor" fill-opacity="0.08" stroke="none"/>
+        <text x="130" y="52" font-size="13" fill="currentColor" stroke="none" text-anchor="end">y = x</text>
+        <text x="214" y="62" font-size="13" fill="currentColor" stroke="none">y = sin x</text>
+        <text x="98" y="162" font-size="13" fill="currentColor" stroke="none">здесь sin x почти равен x</text>
+      </svg>
+      <p class="dim">Схема 13. Первый замечательный предел - это утверждение, что у нуля две линии сливаются: отношение их высот идёт к единице, и равна она единице только в радианах.</p>
+    </div>
+
+    <div class="prints"><strong>Что спрашивают:</strong> «Почему нельзя просто договориться считать в градусах?» Договориться можно, цена известна заранее. Формула производной обрастёт множителем, ряд из следующего абзаца придётся переписать с ним же, тождество Эйлера перестанет быть равенством, а численные библиотеки всё равно работают в радианах, так что каждый вызов обрастёт переводом. Радиан - не удобство записи, а единственная мера, в которой длина дуги и её синус измерены одной линейкой.</div>
+
+    <p>Остаётся вопрос, который геометрическое определение оставляет без ответа: как эти числа вычислить? Циркуль и линейка дают чертёж, а не цифры, и таблицы Птолемея составлялись руками через теоремы о половинном угле. Ответ дал шестой раздел этой страницы: синус и косинус раскладываются в степенные ряды, которые сходятся при любом аргументе.</p>
+
+    <div class="math-block" data-tex="\sin x = \sum_{k=0}^{\infty} \frac{(-1)^{k} x^{2k+1}}{(2k+1)!}, \qquad \cos x = \sum_{k=0}^{\infty} \frac{(-1)^{k} x^{2k}}{(2k)!}"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>sin</mi><mi>x</mi><mo>&#x0003D;</mo><munderover><mo>&#x02211;</mo><mrow><mi>k</mi><mo>&#x0003D;</mo><mn>0</mn></mrow><mrow><mo>&#x0221E;</mo></mrow></munderover><mfrac><mrow><mo stretchy="false">&#x00028;</mo><mo>&#x02212;</mo><mn>1</mn><msup><mo stretchy="false">&#x00029;</mo><mrow><mi>k</mi></mrow></msup><msup><mi>x</mi><mrow><mn>2</mn><mi>k</mi><mo>&#x0002B;</mo><mn>1</mn></mrow></msup></mrow><mrow><mo stretchy="false">&#x00028;</mo><mn>2</mn><mi>k</mi><mo>&#x0002B;</mo><mn>1</mn><mo stretchy="false">&#x00029;</mo><mo>&#x00021;</mo></mrow></mfrac><mo>&#x0002C;</mo><mspace width="2em" /><mi>cos</mi><mi>x</mi><mo>&#x0003D;</mo><munderover><mo>&#x02211;</mo><mrow><mi>k</mi><mo>&#x0003D;</mo><mn>0</mn></mrow><mrow><mo>&#x0221E;</mo></mrow></munderover><mfrac><mrow><mo stretchy="false">&#x00028;</mo><mo>&#x02212;</mo><mn>1</mn><msup><mo stretchy="false">&#x00029;</mo><mrow><mi>k</mi></mrow></msup><msup><mi>x</mi><mrow><mn>2</mn><mi>k</mi></mrow></msup></mrow><mrow><mo stretchy="false">&#x00028;</mo><mn>2</mn><mi>k</mi><mo stretchy="false">&#x00029;</mo><mo>&#x00021;</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\sin x = \sum_{k=0}^{\infty} \frac{(-1)^{k} x^{2k+1}}{(2k+1)!}, \qquad \cos x = \sum_{k=0}^{\infty} \frac{(-1)^{k} x^{2k}}{(2k)!}</annotation></semantics></math></div>
+
+    <p>В этих двух строках нет ни треугольника, ни окружности - только сложение, умножение и деление, то есть ровно то, что умеет машина. Ряд и есть то определение, по которому синус считается на самом деле.</p>
+
+    <pre><code data-run="py">import math
+
+def sin_series(x, n=12):
+    return sum((-1) ** k * x ** (2 * k + 1) / math.factorial(2 * k + 1) for k in range(n))
+
+print(round(sin_series(1.0), 12) == round(math.sin(1.0), 12))
+print(round(sin_series(math.pi / 6), 6), round(sin_series(math.pi / 2), 6))
+# =&gt; True
+# =&gt; 0.5 1.0</code></pre>
+
+    <p>Двенадцать слагаемых дали совпадение с библиотечным синусом до двенадцатого знака, ровно 0,5 для шестой части пи и ровно единицу для половины пи - те самые школьные значения, которые обычно заучивают по таблице. Но главная выгода ряда не в счёте. Ряд не возражает против комплексного аргумента из темы 02: подставьте в ряд показательной функции мнимое число, и чётные слагаемые соберутся в косинус, а нечётные в синус.</p>
+
+    <div class="math-block" data-tex="e^{ix} = \cos x + i \sin x"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>x</mi></mrow></msup><mo>&#x0003D;</mo><mi>cos</mi><mi>x</mi><mo>&#x0002B;</mo><mi>i</mi><mi>sin</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">e^{ix} = \cos x + i \sin x</annotation></semantics></math></div>
+
+    <p>Синус и косинус оказываются действительной и мнимой частью одной показательной функции. Из этого равенства формулы сложения углов выводятся раскрытием скобок в произведении степеней, и вся школьная таблица тождеств - приведение, двойной угол, сумма в произведение - становится следствием одной строки, а не списком для запоминания. Поворот плоскости, комплексное умножение и пара наших функций - это три записи одного действия.</p>
+
+    <p>Третье определение той же пары - через уравнение. Производная синуса есть косинус, производная косинуса есть минус синус; значит, дважды продифференцированный синус возвращается к себе со знаком минус.</p>
+
+    <div class="math-block" data-tex="y'' = -y, \quad y(0) = 0,\ y'(0) = 1 \ \Longrightarrow \ y(x) = \sin x"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>y</mi><mi>&#x02033;</mi></msup><mo>&#x0003D;</mo><mo>&#x02212;</mo><mi>y</mi><mo>&#x0002C;</mo><mspace width="1em" /><mi>y</mi><mo stretchy="false">&#x00028;</mo><mn>0</mn><mo stretchy="false">&#x00029;</mo><mo>&#x0003D;</mo><mn>0</mn><mo>&#x0002C;</mo><mtext>&#x000A0;</mtext><msup><mi>y</mi><mi>&#x02032;</mi></msup><mo stretchy="false">&#x00028;</mo><mn>0</mn><mo stretchy="false">&#x00029;</mo><mo>&#x0003D;</mo><mn>1</mn><mtext>&#x000A0;</mtext><mi>&#x027F9;</mi><mtext>&#x000A0;</mtext><mi>y</mi><mo stretchy="false">&#x00028;</mo><mi>x</mi><mo stretchy="false">&#x00029;</mo><mo>&#x0003D;</mo><mi>sin</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">y'' = -y, \quad y(0) = 0,\ y'(0) = 1 \ \Longrightarrow \ y(x) = \sin x</annotation></semantics></math></div>
+
+    <p>Показательная функция является своей производной, синус и косинус - своей второй производной с минусом, и других таких функций нет: начальное значение и начальная скорость определяют решение однозначно. Минус здесь и означает возврат - чем дальше от равновесия, тем сильнее тянет назад, - и поэтому одно это уравнение описывает маятник, пружину, ток в колебательном контуре и любое малое колебание около устойчивого положения. Как его решают численно, разобрано в теме 07; здесь важнее другое. Пара функций пришла в анализ тремя независимыми путями - из окружности, из ряда и из уравнения, - и каждый раз это оказалась одна и та же пара. Такое совпадение и есть признак, что понятие найдено, а не придумано.</p>
+
+    <p>Последнее, и для инженера самое полезное. Складывая синусы разных частот, можно получить не только плавную волну: суммой синусов приближается любая периодическая функция, в том числе разрывная. Это <span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">ряд Фурье</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Ряд Фурье</strong><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Разложение периодической функции в сумму синусов и косинусов кратных частот.</span><span class="term-links"><a href="glossary.html#term-fourier">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span>, и он переворачивает взгляд на задачу - вместо значений в точках функция описывается набором частот и их весов.</p>
+
+    <div class="math-block" data-tex="f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left( a_n \cos nx + b_n \sin nx \right)"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">&#x00028;</mo><mi>x</mi><mo stretchy="false">&#x00029;</mo><mo>&#x0003D;</mo><mfrac><mrow><msub><mi>a</mi><mn>0</mn></msub></mrow><mrow><mn>2</mn></mrow></mfrac><mo>&#x0002B;</mo><munderover><mo>&#x02211;</mo><mrow><mi>n</mi><mo>&#x0003D;</mo><mn>1</mn></mrow><mrow><mo>&#x0221E;</mo></mrow></munderover><mrow><mo stretchy="true" fence="true" form="prefix">&#x00028;</mo><msub><mi>a</mi><mi>n</mi></msub><mi>cos</mi><mi>n</mi><mi>x</mi><mo>&#x0002B;</mo><msub><mi>b</mi><mi>n</mi></msub><mi>sin</mi><mi>n</mi><mi>x</mi><mo stretchy="true" fence="true" form="postfix">&#x00029;</mo></mrow></mrow><annotation encoding="application/x-tex">f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left( a_n \cos nx + b_n \sin nx \right)</annotation></semantics></math></div>
+
+    <div class="box">
+      <svg role="img" aria-label="Три кривые одна под другой: синус, синус тройного аргумента втрое меньшей высоты и их сумма, у которой на каждом полупериоде появляется вторая, меньшая горка." viewBox="0 0 320 215" width="100%" style="max-width:320px;height:auto;display:block;margin:0 auto" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M78 40 L296 40" stroke-dasharray="3 3"/>
+        <path d="M78 105 L296 105" stroke-dasharray="3 3"/>
+        <path d="M78 175 L296 175" stroke-dasharray="3 3"/>
+        <path d="M78 40 L82.5 36.7 L87.1 33.5 L91.6 30.4 L96.2 27.5 L100.7 24.8 L105.2 22.3 L109.8 20.2 L114.3 18.3 L118.9 16.9 L123.4 15.9 L128 15.2 L132.5 15 L137 15.2 L141.6 15.9 L146.1 16.9 L150.7 18.3 L155.2 20.2 L159.8 22.3 L164.3 24.8 L168.8 27.5 L173.4 30.4 L177.9 33.5 L182.5 36.7 L187 40 L191.5 43.3 L196.1 46.5 L200.6 49.6 L205.2 52.5 L209.7 55.2 L214.2 57.7 L218.8 59.8 L223.3 61.7 L227.9 63.1 L232.4 64.1 L237 64.8 L241.5 65 L246 64.8 L250.6 64.1 L255.1 63.1 L259.7 61.7 L264.2 59.8 L268.8 57.7 L273.3 55.2 L277.8 52.5 L282.4 49.6 L286.9 46.5 L291.5 43.3 L296 40"/>
+        <path d="M78 105 L82.5 101.8 L87.1 99.1 L91.6 97.3 L96.2 96.7 L100.7 97.3 L105.2 99.1 L109.8 101.8 L114.3 105 L118.9 108.2 L123.4 110.9 L128 112.7 L132.5 113.3 L137 112.7 L141.6 110.9 L146.1 108.2 L150.7 105 L155.2 101.8 L159.8 99.1 L164.3 97.3 L168.8 96.7 L173.4 97.3 L177.9 99.1 L182.5 101.8 L187 105 L191.5 108.2 L196.1 110.9 L200.6 112.7 L205.2 113.3 L209.7 112.7 L214.2 110.9 L218.8 108.2 L223.3 105 L227.9 101.8 L232.4 99.1 L237 97.3 L241.5 96.7 L246 97.3 L250.6 99.1 L255.1 101.8 L259.7 105 L264.2 108.2 L268.8 110.9 L273.3 112.7 L277.8 113.3 L282.4 112.7 L286.9 110.9 L291.5 108.2 L296 105"/>
+        <path d="M78 175 L82.5 168.5 L87.1 162.6 L91.6 157.7 L96.2 154.2 L100.7 152.1 L105.2 151.4 L109.8 152 L114.3 153.3 L118.9 155.1 L123.4 156.7 L128 157.9 L132.5 158.3 L137 157.9 L141.6 156.7 L146.1 155.1 L150.7 153.3 L155.2 152 L159.8 151.4 L164.3 152.1 L168.8 154.2 L173.4 157.7 L177.9 162.6 L182.5 168.5 L187 175 L191.5 181.5 L196.1 187.4 L200.6 192.3 L205.2 195.8 L209.7 197.9 L214.2 198.6 L218.8 198 L223.3 196.7 L227.9 194.9 L232.4 193.3 L237 192.1 L241.5 191.7 L246 192.1 L250.6 193.3 L255.1 194.9 L259.7 196.7 L264.2 198 L268.8 198.6 L273.3 197.9 L277.8 195.8 L282.4 192.3 L286.9 187.4 L291.5 181.5 L296 175"/>
+        <text x="70" y="44" font-size="13" fill="currentColor" stroke="none" text-anchor="end">sin x</text>
+        <text x="70" y="109" font-size="13" fill="currentColor" stroke="none" text-anchor="end">sin 3x/3</text>
+        <text x="70" y="179" font-size="13" fill="currentColor" stroke="none" text-anchor="end">сумма</text>
+      </svg>
+      <p class="dim">Схема 14. Сумма синусов кратных частот перестаёт быть синусом: подбирая веса, так собирают любую периодическую функцию, в том числе разрывную.</p>
+    </div>
+
+    <pre><code data-run="py">import math
+
+def wave(x, n):
+    return 4 / math.pi * sum(math.sin(k * x) / k for k in range(1, 2 * n, 2))
+
+print([round(wave(math.pi / 2, n), 6) for n in (1, 3, 25)])
+print(round(max(wave(i / 2000, 25) for i in range(1, 1000)), 6))
+# =&gt; [1.27324, 1.103474, 1.012727]
+# =&gt; 1.179106</code></pre>
+
+    <p>Собирается прямоугольная волна - функция, которая равна единице на половине периода и минус единице на другой половине. В середине полуволны одно слагаемое даёт 1,273, три дают 1,103, двадцать пять дают 1,0127: сумма сходится к единице. А вот у самого скачка она перелетает до 1,179, и этот перелёт не уменьшается с ростом числа слагаемых - он только сжимается к точке разрыва. Явление называется эффектом Гиббса и стоит того, чтобы его знать: это тот случай, когда ряд сходится в каждой точке, но не сходится равномерно, и разница между двумя видами сходимости из первого раздела перестаёт быть формальной. Звук, изображение и радиосигнал хранят и сжимают именно в частотном описании, и звон на резком контуре в сильно сжатой картинке - это ровно тот перелёт, который виден в последней строке.</p>
+
+    <div class="prints"><strong>Что спрашивают:</strong> «Зачем переходить к частотам, если данные даны значениями?» Затем, что в частотном описании многие задачи становятся линейными и разделяются. Свёртка превращается в умножение, уравнение теплопроводности и волновое уравнение из темы 07 распадаются на независимые частоты, фильтрация сводится к зачёркиванию части коэффициентов, а быстрое преобразование Фурье делает весь переход за время порядка n log n вместо n в квадрате. Ряд Фурье - это смена базиса из темы 05, только базис бесконечномерный, а роль перпендикулярности играет интеграл от произведения.</div>
+
+    <p>Для работы с данными из всего раздела важны две вещи. Первая: угол между векторами мерят косинусом, и в теме 05 эта мера названа своим прикладным именем. Вторая: порядок элементов в последовательности сообщают модели набором синусов и косинусов разных частот - это позиционное кодирование, о котором говорит <a href="navigator.html#lens-ai">линза навигатора о работе с данными и моделями</a>. Обе опираются на то, что здесь доказано: пара функций переводит сдвиг в поворот, а поворот сохраняет длины.</p>
 
     <div class="box key" id="artifacts">
       <h2>Артефакты: что у вас есть после этой страницы <a class="anchor-link" href="#artifacts">#</a></h2>
@@ -277,6 +403,7 @@ print(round(h, 6), h &gt; 14)
         <li>Метод деления пополам, который является теоремой о промежуточном значении, переписанной кодом.</li>
         <li>Производная как лучшее линейное приближение и численная проверка правила дифференцирования.</li>
         <li>Интеграл как предел сумм и гармонический ряд как пример, где численная проверка бессильна.</li>
+        <li>Синус и косинус в трёх определениях - окружность, ряд, уравнение - и радиан как их следствие, а не соглашение.</li>
       </ul>
     </div>
   

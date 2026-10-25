@@ -94,7 +94,7 @@
 
   <main id="main">
     <h1>Линейная алгебра: матрицы, формы, собственные числа</h1>
-    <p class="page-size" data-words="1246">Слов: 1246</p>
+    <p class="page-size" data-words="1411">Слов: 1411</p>
     <p class="lead">Единственный класс задач, который решается до конца и машинно: линейные. Отсюда же берётся вся школьная геометрия.</p>
 
     <div class="box key" id="key-idea">
@@ -194,6 +194,29 @@ print(av, [lam * v[0], lam * v[1]], av == [lam * v[0], lam * v[1]])
     <p>Вся школьная геометрия вытекает отсюда в несколько строк. Теорема Пифагора - раскрытие скобок в квадрате суммы перпендикулярных векторов. Неравенство треугольника - следствие неравенства Коши и Буняковского. Проекция точки на прямую - формула с одним скалярным произведением, и она же лежит внутри метода наименьших квадратов, которым приближают данные в теме 08.</p>
 
     <div class="prints"><strong>Что спрашивают:</strong> «Бывает ли другая геометрия на том же пространстве?» Бывает: другое скалярное произведение задаёт другие длины и углы на тех же векторах. На этом стоит теория относительности, где форма не положительна, и обработка данных, где взвешенное произведение учитывает разную важность координат.</div>
+
+    <p>У угла есть прикладное имя, под которым он живёт в работе с данными. Косинус угла между двумя векторами равен их скалярному произведению, делённому на произведение длин, и в этом виде он называется <span class="term"><button type="button" class="term-btn" aria-expanded="false" style="background:none;border:none;padding:1px 4px;margin:-1px -4px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dashed var(--term-accent,#db8b0e);border-radius:4px;">косинусной близостью</button><span class="term-card" role="tooltip" hidden><span class="term-header"><strong class="term-title">Косинусная близость</strong><span class="area-tag" data-area="ai">для ИИ</span><button type="button" class="term-close" aria-label="Закрыть">&times;</button></span><span class="term-desc">Косинус угла между векторами: скалярное произведение, делённое на произведение длин.</span><span class="term-links"><a href="glossary.html#term-cosine-similarity">В словарь понятий <svg class="icon" data-icon="book" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 3.8h4.8a2.6 2.6 0 0 1 2.6 2.6v10a2.2 2.2 0 0 0-2.2-1.8H2.6z"/><path d="M17.4 3.8h-4.8a2.6 2.6 0 0 0-2.6 2.6v10a2.2 2.2 0 0 1 2.2-1.8h5.2z"/></svg></a></span></span></span>. Единица означает одно направление, нуль - перпендикулярность, минус единица - противоположность.</p>
+
+    <div class="math-block" data-tex="\cos \varphi = \frac{\langle u, v \rangle}{\|u\| \cdot \|v\|}"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>cos</mi><mi>&#x003C6;</mi><mo>&#x0003D;</mo><mfrac><mrow><mi>&#x027E8;</mi><mi>u</mi><mo>&#x0002C;</mo><mi>v</mi><mi>&#x027E9;</mi></mrow><mrow><mo fence="false" stretchy="false">&#x02016;</mo><mi>u</mi><mo fence="false" stretchy="false">&#x02016;</mo><mo>&#x000B7;</mo><mo fence="false" stretchy="false">&#x02016;</mo><mi>v</mi><mo fence="false" stretchy="false">&#x02016;</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\cos \varphi = \frac{\langle u, v \rangle}{\|u\| \cdot \|v\|}</annotation></semantics></math></div>
+
+    <p>Длины в этой дроби сокращаются, и это её главное свойство: вектор и тот же вектор, умноженный на пять, для неё неразличимы. Поэтому ею и мерят сходство эмбеддингов - строк чисел, которыми модель заменяет слово: длина такого вектора зависит от того, как часто слово встречалось при обучении, а направление от его смысла, и сравнивать нужно второе. Сам косинус определён в <a href="06.html#sincos">седьмом разделе темы 06</a>, и там же показано, почему угол меряют именно им.</p>
+
+    <div class="box">
+      <svg role="img" aria-label="Из одной точки выходят три вектора: u, v и вектор 2v, вдвое длиннее v и лежащий с ним на одной прямой; угол между u и v отмечен дугой и для 2v остаётся тем же." viewBox="0 0 320 200" width="100%" style="max-width:320px;height:auto;display:block;margin:0 auto" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M50 170 L230 130"/>
+        <path d="M221.3 137.1 L230 130 L219.1 127.3"/>
+        <path d="M50 170 L160 90"/>
+        <path d="M154.9 99.9 L160 90 L149 91.8"/>
+        <path d="M160 90 L270 10" stroke-dasharray="5 3"/>
+        <path d="M264.9 19.9 L270 10 L259 11.8"/>
+        <path d="M103.7 158.1 A55 55 0 0 0 94.5 137.6"/>
+        <text x="236" y="134" font-size="13" fill="currentColor" stroke="none">u</text>
+        <text x="168" y="100" font-size="13" fill="currentColor" stroke="none">v</text>
+        <text x="250" y="44" font-size="13" fill="currentColor" stroke="none">2v</text>
+        <text x="82" y="159" font-size="13" fill="currentColor" stroke="none">&#x3C6;</text>
+      </svg>
+      <p class="dim">Схема 7. Косинусная близость смотрит только на направление: вектор v и вдвое более длинный вектор 2v дают с u один и тот же угол, потому что длины в формуле сокращаются.</p>
+    </div>
 
     <h2 id="why-linear">6 · Почему линейный случай единственный решаемый <a class="anchor-link" href="#why-linear">#</a></h2>
 
