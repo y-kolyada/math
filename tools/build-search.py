@@ -43,10 +43,65 @@ GAP = re.compile(r'\s+([?!,.:;)])')
 MATH = re.compile(r'<math\b.*?</math>', re.S | re.I)
 
 
+def drop_cards(chunk):
+    """Снять всплывающие карточки, оставив слова, на которых они висят.
+
+    Карточка .term несёт внутри себя название понятия, крестик закрытия и
+    ссылку «В словарь понятий». Слепое снятие тегов кладёт всё это в индекс,
+    и сниппет под найденной строкой читается как «Предел × Число, к которому
+    последовательность приближается». Скобки считаются руками: вложенные
+    <span> регулярному выражению не по зубам, а ошибка здесь тихая.
+    """
+    out = []
+    i = 0
+    while True:
+        start = chunk.find('<span class="term-card"', i)
+        if start < 0:
+            out.append(chunk[i:])
+            return ''.join(out)
+        out.append(chunk[i:start])
+        depth = 0
+        k = start
+        while k < len(chunk):
+            opened = chunk.find('<span', k)
+            closed = chunk.find('</span>', k)
+            if closed < 0:
+                k = len(chunk)
+                break
+            if 0 <= opened < closed:
+                depth += 1
+                k = opened + 5
+            else:
+                depth -= 1
+                k = closed + 7
+                if depth == 0:
+                    break
+        i = k
+
+
 def text_of(chunk):
-    chunk = MATH.sub(' ', chunk)
+    chunk = drop_cards(MATH.sub(' ', chunk))
     plain = ' '.join(html.unescape(TAG.sub(' ', SERVICE.sub(' ', ANCHOR_LINK.sub(' ', chunk)))).split())
     return GAP.sub(r'\1', plain)
+
+
+# Вид страницы вычисляется из её имени, а не объявляется разметкой: имена
+# -  соглашение серии (AGENTS.md §5.12 и §5.13), и движок знает его сам. Поэтому
+# сайту нечего объявлять, а сайт без банка вопросов не получает переключателя,
+# за которым пусто: ряд фасетов строится по тому, что в индексе есть.
+# Порядок кодов - порядок переключателей в окне поиска. Подписи к ним живут
+# в assets/search.js по языкам: индекс несёт код, а не слово.
+KINDS = ('t', 'e', 'q', 'n', 'g', 'i')
+
+
+def kind_of(page):
+    name = page[:-5] if page.endswith('.html') else page
+    if name.isdigit():
+        n = int(name)
+        if n <= 9:
+            return 't'
+        return 'e' if n <= 12 else 'q'
+    return {'navigator': 'n', 'glossary': 'g', 'index': 'i'}.get(name, 't')
 
 
 def entries(path, page):
@@ -56,6 +111,7 @@ def entries(path, page):
         return []
     body = body.group(1)
     title = text_of(H1.search(body).group(1)) if H1.search(body) else page
+    kind = kind_of(page)
     found = []
 
     cuts = [(m.start(), m.group(1), text_of(m.group(2)).rstrip(' #')) for m in H2.finditer(body)]
@@ -65,17 +121,17 @@ def entries(path, page):
         # A glossary block heading holds the terms that follow; they are indexed
         # one by one, so the heading keeps only its own lead text.
         own = chunk.split('<div class="glossary-term"')[0]
-        found.append([page + '#' + anchor, head, title, text_of(own)])
+        found.append([page + '#' + anchor, head, title, text_of(own), kind])
 
         for block in QA.findall(chunk):
             for item in LI.findall(block):
                 ask = STRONG.search(item)
                 if not ask:
                     continue
-                found.append([page + '#' + anchor, text_of(ask.group(1)), title, text_of(item)])
+                found.append([page + '#' + anchor, text_of(ask.group(1)), title, text_of(item), kind])
 
     for anchor, head, rest in TERM.findall(body):
-        found.append([page + '#' + anchor, text_of(head).rstrip(' #'), title, text_of(rest)])
+        found.append([page + '#' + anchor, text_of(head).rstrip(' #'), title, text_of(rest), kind])
 
     return found
 
@@ -85,7 +141,10 @@ def build(lang):
     for name in sorted(os.listdir(lang)):
         if name.endswith('.html'):
             items += entries(os.path.join(lang, name), name)
-    data = json.dumps({'l': lang, 'i': items}, ensure_ascii=False, separators=(',', ':'))
+    seen = {k for *_, k in items}
+    kinds = [code for code in KINDS if code in seen]
+    data = json.dumps({'l': lang, 'k': kinds, 'i': items},
+                      ensure_ascii=False, separators=(',', ':'))
     return 'window.SEARCH=' + data + ';\n', len(items)
 
 

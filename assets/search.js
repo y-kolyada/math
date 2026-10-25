@@ -6,19 +6,31 @@
     ru: { place: 'Искать по разделам, словарю и вопросам', none: 'Ничего не найдено',
           empty: 'Для этого языка содержание ещё не переведено', close: 'Закрыть поиск',
           clear: 'Очистить строку поиска',
-          hint: 'Esc - закрыть, стрелки - выбор, Enter - перейти' },
+          hint: 'Esc - закрыть, стрелки - выбор, Enter - перейти' ,
+          only: 'Искать только по темам или снова везде', found: 'Найдено',
+          firstN: 'показаны первые',
+          kinds: { t: 'Темы', e: 'Примеры', q: 'Вопросы', n: 'Навигатор', g: 'Словарь', i: 'Витрина' } },
     en: { place: 'Search sections, glossary, and questions', none: 'Nothing found',
           empty: 'This language has no content yet', close: 'Close search',
           clear: 'Clear search query',
-          hint: 'Esc to close, arrows to move, Enter to open' },
+          hint: 'Esc to close, arrows to move, Enter to open' ,
+          only: 'Search topics only, or everywhere again', found: 'Found',
+          firstN: 'first shown',
+          kinds: { t: 'Topics', e: 'Examples', q: 'Questions', n: 'Navigator', g: 'Glossary', i: 'Landing' } },
     uk: { place: 'Шукати в розділах, словнику й питаннях', none: 'Нічого не знайдено',
           empty: 'Для цієї мови зміст ще не перекладено', close: 'Закрити пошук',
           clear: 'Очистити рядок пошуку',
-          hint: 'Esc - закрити, стрілки - вибір, Enter - перейти' },
+          hint: 'Esc - закрити, стрілки - вибір, Enter - перейти' ,
+          only: 'Шукати лише в темах або знову скрізь', found: 'Знайдено',
+          firstN: 'показано перші',
+          kinds: { t: 'Теми', e: 'Приклади', q: 'Питання', n: 'Навігатор', g: 'Словник', i: 'Вітрина' } },
     de: { place: 'Abschnitte, Glossar und Fragen durchsuchen', none: 'Nichts gefunden',
           empty: 'Für diese Sprache gibt es noch keine Inhalte', close: 'Suche schließen',
           clear: 'Suchfeld leeren',
-          hint: 'Esc schließt, Pfeile wählen, Enter öffnet' },
+          hint: 'Esc schließt, Pfeile wählen, Enter öffnet' ,
+          only: 'Nur in Themen suchen oder wieder überall', found: 'Gefunden',
+          firstN: 'davon angezeigt',
+          kinds: { t: 'Themen', e: 'Beispiele', q: 'Fragen', n: 'Navigator', g: 'Glossar', i: 'Startseite' } },
   };
 
   const lang = document.documentElement.lang || 'ru';
@@ -30,7 +42,14 @@
   // ё and е are one letter for a reader looking for a word.
   const norm = (s) => s.toLowerCase().replace(/ё/g, 'е');
   const items = raw.map((e) => ({ url: e[0], title: e[1], page: e[2], body: e[3],
-    t: norm(e[1]), b: norm(e[3]) }));
+    kind: e[4] || 't', t: norm(e[1]), b: norm(e[3]) }));
+
+  // Виды страниц, которые в этом индексе вообще есть. Один вид - отбирать
+  // не из чего, и ряда переключателей не появляется вовсе: на языке, где
+  // переведена только витрина, он был бы одной кнопкой «Витрина».
+  const kinds = ((window.SEARCH && window.SEARCH.k) || []).filter((k) => say.kinds[k]);
+  const faceted = kinds.length > 1;
+  const off = new Set();
 
   const panel = document.createElement('div');
   panel.className = 'search-panel';
@@ -44,15 +63,28 @@
     + '<svg class="icon" data-icon="clear-mark" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
     + '<path d="M12.5 3.5l4 4L8 16H4v-4L12.5 3.5z"/><path d="M3 18h14"/><path d="M14.5 11.5l3.5 3.5M18 11.5l-3.5 3.5"/></svg>'
     + '</button>'
+    + (faceted ? '<button type="button" class="search-only" aria-pressed="false" aria-label="'
+        + say.only + '" title="' + say.only + '">'
+        + '<svg class="icon" data-icon="funnel" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+        + '<path d="M3 4.5h14l-5.4 6.2v4.6l-3.2 1.8v-6.4z"/></svg>'
+        + '</button>' : '')
     + '<span class="search-lang">' + lang.toUpperCase() + '</span>'
     + '<button type="button" class="search-close" aria-label="' + say.close + '">&times;</button>'
     + '</div>'
+    + (faceted ? '<div class="search-facets" role="group">'
+        + kinds.map((k) => '<button type="button" class="search-facet" data-kind="' + k
+          + '" aria-pressed="true">' + say.kinds[k] + '</button>').join('')
+        + '</div>' : '')
+    + '<p class="search-count" hidden></p>'
     + '<ul class="search-results"></ul>'
     + '<div class="search-hint">' + say.hint + '</div>'
     + '</div>';
   document.body.appendChild(panel);
 
   const input = panel.querySelector('.search-input');
+  const facets = [...panel.querySelectorAll('.search-facet')];
+  const onlyBtn = panel.querySelector('.search-only');
+  const count = panel.querySelector('.search-count');
   const clearBtn = panel.querySelector('.search-clear');
   const list = panel.querySelector('.search-results');
   let picked = -1;
@@ -63,11 +95,51 @@
       input.value = saved.q;
       picked = typeof saved.idx === 'number' ? saved.idx : -1;
     }
+    if (saved && Array.isArray(saved.off)) {
+      saved.off.forEach((k) => off.add(k));
+    }
   } catch (_) {}
+
+  paintFacets();
+
+  // Выключить все виды - то же, что не искать вовсе, поэтому последний
+  // включённый не выключается: пустая выдача без причины читается как
+  // поломка поиска, а не как собственный выбор.
+  function paintFacets() {
+    facets.forEach((b) => b.setAttribute('aria-pressed', String(!off.has(b.dataset.kind))));
+    if (onlyBtn) {
+      const onlyTopics = off.size === kinds.length - 1 && !off.has('t');
+      onlyBtn.setAttribute('aria-pressed', String(onlyTopics));
+    }
+  }
+
+  // Один щелчок вместо пяти: предмет сайта или весь сайт. Первое открытие
+  // окна ищет везде - читатель, который ещё не знает, что здесь есть,
+  // не должен сначала включать то, о чём не спрашивал.
+  if (onlyBtn) {
+    onlyBtn.addEventListener('click', () => {
+      const onlyTopics = off.size === kinds.length - 1 && !off.has('t');
+      off.clear();
+      if (!onlyTopics) kinds.forEach((k) => { if (k !== 't') off.add(k); });
+      paintFacets();
+      render(input.value, false);
+      saveState(picked, '', false);
+    });
+  }
+
+  facets.forEach((btn) => btn.addEventListener('click', () => {
+    const k = btn.dataset.kind;
+    if (off.has(k)) off.delete(k);
+    else if (off.size < kinds.length - 1) off.add(k);
+    else return;
+    paintFacets();
+    render(input.value, false);
+    saveState(picked, '', false);
+  }));
 
   function saveState(idx, url, active) {
     try {
-      if (!input.value.trim()) {
+      if (!input.value.trim() && !off.size) {
         sessionStorage.removeItem(key('search'));
         return;
       }
@@ -76,6 +148,7 @@
         idx,
         url: url || '',
         active: Boolean(active),
+        off: [...off],
       }));
     } catch (_) {}
   }
@@ -92,20 +165,32 @@
     if (needle.length < 2) return [];
     const hits = [];
     for (const entry of items) {
+      if (off.has(entry.kind)) continue;
       const inTitle = entry.t.indexOf(needle);
       const inBody = inTitle < 0 ? entry.b.indexOf(needle) : -1;
       if (inTitle < 0 && inBody < 0) continue;
       hits.push({ entry, rank: inTitle >= 0 ? inTitle : 1000 + inBody });
     }
     hits.sort((a, b) => a.rank - b.rank);
-    return hits.slice(0, 40).map((h) => h.entry);
+    return { total: hits.length, shown: hits.slice(0, 40).map((h) => h.entry) };
   }
 
   function render(query, keepPicked) {
     clearBtn.hidden = !query.length;
-    const found = items.length ? find(query) : [];
+    const got = items.length ? find(query) : { total: 0, shown: [] };
+    const found = got.shown;
     list.innerHTML = '';
     if (!keepPicked) picked = -1;
+    // Счётчик говорит, сколько нашлось на самом деле, а не сколько влезло:
+    // сорок - это потолок выдачи, и читатель, видящий ровно сорок, не должен
+    // гадать, конец это списка или его начало.
+    if (count) {
+      count.hidden = !got.total;
+      count.textContent = got.total
+        ? say.found + ': ' + got.total
+          + (got.total > found.length ? ', ' + say.firstN + ' ' + found.length : '')
+        : '';
+    }
     if (!items.length) {
       list.innerHTML = '<li class="search-empty">' + say.empty + '</li>';
       return;
@@ -122,10 +207,11 @@
       a.dataset.idx = String(idx);
       if (idx === picked) a.classList.add('picked');
       a.innerHTML = '<span class="search-title"></span>'
-        + '<span class="search-where"><span class="search-badge">' + lang.toUpperCase() + '</span></span>'
+        + '<span class="search-where"><span class="search-badge">' + lang.toUpperCase() + '</span>'
+        + '<span class="search-page"></span></span>'
         + '<span class="search-snip"></span>';
       a.querySelector('.search-title').textContent = entry.title;
-      a.querySelector('.search-where').append(entry.page);
+      a.querySelector('.search-page').textContent = entry.page;
       a.querySelector('.search-snip').textContent = snippet(entry, needle);
       li.appendChild(a);
       list.appendChild(li);
